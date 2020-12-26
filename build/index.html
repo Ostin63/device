@@ -1,11 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>device</title>
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/style.min.css">
 </head>
+
 <body>
-  
+  <header>
+    <div class="container">
+      <div class="header">
+        <p class="logo">DEVICE</p>
+        <div class="top-nav-site">
+          <div class="search">
+            <form class="form-search" action="#">
+              <button type="submit"></button>
+              <input type="text" placeholder="Поиск по сайту">
+            </form>
+          </div>
+          <button>
+            <img src="img/avatar.png" alt="avatar">
+            <a href="#">Войти</a>
+          </button>
+          <button>
+            <img src="img/compare.png" alt="compare">
+            <a href="#">Сравнить</a>
+          </button>
+          <button>
+            <img src="img/basket.png" alt="basket">
+            <a href="#">Корзина</a>
+          </button>
+        </div>
+        <div class="bottom-nav-site">
+          <a href="catalog.html">Каталог товаров <span></span></a>
+          <nav>
+            <a href="#">Доставка</a>
+            <a href="#">Гарантия</a>
+            <a href="#">Контакты</a>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <section class="container">
+      <h2 hidden>Top slider</h2>
+      <ul class="top-slider">
+        <li class="slider-block">
+          <div class="slider-item">
+            <div class="block-img">
+              <img src="img/slider-1.png" width="384" height="486" alt="slider-1">
+            </div>
+            <div class="block-info">
+              <p><span></span>01</p>
+              <strong>Делай селфи,
+                как Бен Стиллер!</strong>
+              <p>Самая длинная палка для селфи доступна в нашем магазине.
+                Восемь (Восемь, Карл!) метров длиной и весом всего 5 килограмм.</p>
+              <button>Подробнее</button>
+              <table>
+                <tr>
+                  <th>8,5 м</th>
+                  <th>5 кг</th>
+                  <th>Карбон</th>
+                </tr>
+                <tr>
+                  <td>Длина палки</td>
+                  <td>Вес палки</td>
+                  <td>Материал</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </li>
+        <li class="slider-block">
+          <div class="slider-item">
+            <div class="block-img">
+              <img src="img/slider-2.png" width="345" height="485" alt="slider-2">
+            </div>
+            <div class="block-info">
+              <p><span></span>02</p>
+              <strong>Худеем правильно!</strong>
+              <p>Мотивирующие фитнес-браслеты помогут найти в себе силы
+                не пропускать занятия и соблюдать диету.</p>
+              <button>Подробнее</button>
+              <table>
+                <tr>
+                  <th>48 часов</th>
+                </tr>
+                <tr>
+                  <td>Без подзарядки</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </li>
+        <li class="slider-block">
+          <div class="slider-item">
+            <div class="block-img">
+              <img src="img/slider-3.png" width="526" height="334" alt="slider-3">
+            </div>
+            <div class="block-info">
+              <p><span></span>03</p>
+              <strong>Порхает как бабочка, жалит как пчела!</strong>
+              <p>Этот обычный, на первый взгляд, квадрокоптер оснащен
+                мощным лазером, замаскированным под стандартную камеру.</p>
+              <button>Подробнее</button>
+              <table>
+                <tr>
+                  <th>800 м</th>
+                  <th>50 м</th>
+                </tr>
+                <tr>
+                  <td>Дальность полета</td>
+                  <td>Радиус поражения</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </li>
+      </ul>
+      <ul class="block-pagination">
+        <li class="pagination-item"><span></span></li>
+        <li class="pagination-item"><span></span></li>
+        <li class="pagination-item"><span></span></li>
+      </ul>
+    </section>
+  </main>
+  <script src="js/script.js"></script>
 </body>
+
 </html>
