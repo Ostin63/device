@@ -22,36 +22,77 @@
 
 .form-search {
   position: relative;
-  width: 300px;
-  margin: 0 auto;
+  width: 440px;
+  display: flex;
+
 }
 
 .search {
 
   input,
   button {
+    padding: 13px 19px;
+    box-sizing: border-box;
     outline: none;
     background: transparent;
   }
 
-  input {
-    width: 160px;
-    height: 42px;
+  button {
+    display: none;
+  }
+
+  .form-text {
+    width: 356px;
+    height: 48px;
     padding-left: 30px;
     border: none;
+    box-sizing: border-box;
 
     &:focus {
-      border-color: #311c24
+      color: #000000;
+    }
+
+    &:focus,
+    &:hover {
+      border-bottom: 1px solid #000000;
+      border-color: #000000;
+
+      &+.form-button {
+        display: block;
+      }
+
+      &::placeholder {
+        color: #b6a76f;
+      }
     }
   }
 
-  button {
+  .form-button {
+
+    &:hover,
+    &:focus {
+      display: block;
+      color: #ffffff;
+      background: #000;
+
+      &+.form-text {
+        border-bottom: 1px solid #000000;
+      }
+    }
+
+    &:active {
+      color: #434343;
+    }
+
+  }
+
+  .lens {
     position: absolute;
     border: none;
     height: 16px;
     width: 16px;
-    top: 12px;
-    left: -5px;
+    top: 0;
+    left: 0;
     cursor: pointer;
 
     &:before {
@@ -100,19 +141,51 @@
 }
 
 .bottom-nav-site {
+  width: 1040px;
   margin-top: 20px;
   display: flex;
   justify-content: space-between;
 
-  a {
-    display: block;
+  .button-catalog {
+    width: 230px;
+    display: flex;
+    justify-content: space-between;
     font-size: 18px;
     line-height: 24px;
-    font-optical-sizing: auto;
+    letter-spacing: 3px;
     text-decoration: none;
     text-transform: uppercase;
     color: #000000;
     font-family: "gilroyextrabold", "arial", sans-serif;
+    box-sizing: border-box;
+
+    span {
+      position: relative;
+      width: 10px;
+      height: 1px;
+      display: block;
+      align-self: center;
+      background: #b8a974;
+
+      &::after {
+        position: absolute;
+        content: "";
+        display: block;
+        width: 10px;
+        height: 1px;
+        transform: rotate(90deg);
+        background: #b8a974;
+      }
+    }
+
+    &:hover,
+    &:focus {
+      color: #635a3c;
+    }
+
+    &:active {
+      color: #ac9e69;
+    }
   }
 }
 
@@ -123,4 +196,24 @@
   margin: 0;
   display: flex;
   justify-content: space-between;
+
+  a {
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: 3px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #000000;
+    font-family: "gilroyextrabold", "arial", sans-serif;
+    display: block;
+
+    &:hover,
+    &:focus {
+      color: #635a3c;
+    }
+
+    &:active {
+      color: #ac9e69;
+    }
+  }
 }

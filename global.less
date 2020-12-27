@@ -16,3 +16,40 @@
   border: 0;
 }
 
+
+  .button {
+    position: relative;
+    width: 220px;
+    height: 8px;
+    top: 30px;
+    margin-bottom: 65px;
+    border: none;
+    background: #f7e296;
+    outline: none;
+    cursor: pointer;
+
+    span {
+      position: absolute;
+      top: -8px;
+      left: 53px;
+      text-transform: uppercase;
+      font-size: 18px;
+      line-height: 24px;
+      font-family: "gilroyextrabold", "arial", sans-serif;
+    }
+
+    &:hover {
+      height: 40px;
+      top: 12px;
+      margin-bottom: 33px;
+
+      span {
+        top: 10px;
+      }
+    }
+
+    &:active {
+      color: #a88a20;
+
+    }
+  }
