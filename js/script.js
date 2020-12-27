@@ -7,7 +7,7 @@ let sliderBlocks = document.querySelectorAll('.slider-block');
 let arryCarts = [];
 for (let i = 0; i < sliderBlocks.length; i++){
   let slBlock = sliderBlocks[0];
-  slBlock.classList.add('block');
+  slBlock.classList.remove('visuallyHidden');
   let onCart = sliderBlocks[i];
   arryCarts.push(onCart);
 }
@@ -23,9 +23,11 @@ let toggleOnClick = function (itemBtn, onCart) {
     target.classList.add('active');
     for (let i = 0; i < sliderBlocks.length; i++){
       let cart = sliderBlocks[i];
-      cart.classList.remove('block')
+      cart.classList.add('visuallyHidden');
+      cart.classList.remove('slider-show');
     }
-    onCart.classList.add('block')
+    onCart.classList.remove('visuallyHidden');
+    onCart.classList.add('slider-show');
   });
 };
 for (let i = 0; i < paginationBtn.length; i++){

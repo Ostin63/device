@@ -1,17 +1,33 @@
+.slider-page {
+  position: relative;
+}
+
 .top-slider {
   position: relative;
-  padding-top: 50px;
-  padding-bottom: 50px;
   list-style: none;
   margin: 0;
   padding-left: 0;
+  background: #f7e296;
+  background: linear-gradient(180deg, #f7e296 118px, #ffffff 118px);
 }
 
-.slider-block {
-  display: none;
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.slider-show {
+  animation-name: fadeIn;
+  animation-duration: .5s;
 }
 
 .slider-item {
+  position: relative;
   display: flex;
   justify-content: space-between;
 }
@@ -35,22 +51,104 @@
   flex-direction: column;
 
   p:first-child {
+    position: absolute;
     margin: 0;
+    color: #ffffff;
+    right: 0;
+    top: -20px;
     font-size: 179px;
     font-family: "gilroyextrabold", "arial", sans-serif;
+
+    span {
+      position: absolute;
+      width: 100px;
+      height: 7px;
+      top: 70px;
+      right: 400px;
+      display: block;
+      background: #ffffff;
+    }
+  }
+
+  .button {
+    position: relative;
+    width: 220px;
+    height: 8px;
+    top: 30px;
+    margin-bottom: 65px;
+    border: none;
+    background: #f7e296;
+    outline: none;
+    cursor: pointer;
+
+    span {
+      position: absolute;
+      top: -8px;
+      left: 53px;
+      text-transform: uppercase;
+      font-size: 18px;
+      line-height: 24px;
+      font-family: "gilroyextrabold", "arial", sans-serif;
+    }
+
+    &:hover {
+      height: 40px;
+      top: 12px;
+      margin-bottom: 33px;
+
+      span {
+        top: 10px;
+      }
+    }
+
+    &:active {
+      color: #a88a20;
+
+    }
   }
 
   strong {
+    width: 400px;
+    margin-top: 86px;
     font-size: 47px;
     font-family: "gilroyextrabold", "arial", sans-serif;
+    z-index: 5;
+  }
+
+  p:nth-child(3) {
+    width: 480px;
+    margin-top: 35px;
+    margin-bottom: 35px;
+    font-size: 15px;
+    line-height: 30px;
+    font-family: "opensanslight", "arial", sans-serif;
   }
 }
+
+.table-options {
+  width: 430px;
+
+  th {
+    width: 160px;
+    font-size: 36px;
+    line-height: 48px;
+    font-family: "gilroylight", "arial", sans-serif;
+  }
+
+  td {
+    font-size: 13px;
+    line-height: 20px;
+    font-family: "opensanslight", "arial", sans-serif;
+  }
+}
+
 
 .block-pagination {
   position: absolute;
   width: 80px;
-  bottom: 0;
-  right: 220px;
+  top: 330px;
+  right: 40px;
+  ;
   list-style: none;
   display: flex;
   justify-content: space-between;
@@ -79,8 +177,4 @@
     border-radius: 50%;
     border: 1px solid #000000;
   }
-}
-
-.block {
-  display: block;
 }
