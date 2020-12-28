@@ -1,0 +1,31 @@
+.page-brands {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.block-imges {
+  width: 260px;
+  height: 100px;
+
+  img {
+    &:last-child {
+      display: none;
+    }
+  }
+
+  &:hover {
+    img {
+      &:last-child {
+        display: block;
+      }
+    }
+
+    img {
+      &:first-child {
+        display: none;
+      }
+    }
+  }
+}

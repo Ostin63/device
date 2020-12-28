@@ -64,7 +64,7 @@
                   как&nbsp;Бен Стиллер!</strong>
                 <p>Самая длинная палка для селфи доступна в нашем магазине.
                   Восемь (Восемь, Карл!) метров длиной и весом всего 5 килограмм.</p>
-                <button class="button btn">Подробнее</button>
+                <button class="button btn"><span class="text">Подробнее</span><span class="bg"></span></button>
                 <table class="table-options">
                   <tr>
                     <th>8,5 м</th>
@@ -90,7 +90,7 @@
                 <strong>Худеем правильно!</strong>
                 <p>Мотивирующие фитнес-браслеты помогут найти в себе силы
                   не пропускать занятия и соблюдать диету.</p>
-                <button class="button btn">Подробнее</button>
+                <button class="button btn"><span class="text">Подробнее</span><span class="bg"></button>
                 <table class="table-options">
                   <tr>
                     <th>48&nbsp;часов</th>
@@ -116,7 +116,7 @@
                 <strong>Порхает&nbsp;как&nbsp;бабочка, жалит как пчела!</strong>
                 <p>Этот обычный, на первый взгляд, квадрокоптер оснащен
                   мощным лазером, замаскированным под стандартную камеру.</p>
-                <button class="button btn">Подробнее</button>
+                <button class="button btn"><span class="text">Подробнее</span><span class="bg"></button>
                 <table class="table-options">
                   <tr>
                     <th class="param-top">800 м</th>
@@ -190,99 +190,144 @@
         </ul>
       </div>
     </section>
-    <section class="container">
+    <section class="services-page">
       <h2 hidden>Сервисы</h2>
-      <div class="services">
+      <div class="services container">
         <ul class="services-buttons">
           <li>
-            <button class="button btn">Доставка</button>
+            <button class="services-button button btn"><span class="text">Доставка</span><span class="bg"></span></button>
           </li>
           <li>
-            <button class="button btn">Гарантия</button>
+            <button class="services-button button btn"><span class="text">Гарантия</span><span class="bg"></span></button>
           </li>
           <li>
-            <button class="button btn">Кредит</button>
+            <button class="services-button button btn"><span class="text">Кредит</span><span class="bg"></span></button>
           </li>
         </ul>
+        <span class="plank"></span>
         <ul class="services-slider">
-          <li class="services-slider--item">
+          <li class="services-slider--item visuallyHidden">
             <div class="page-item">
               <div class="service-info">
                 <h3>Доставка</h3>
                 <p>Мы с удовольствием доставим ваш товар прямо к вашему подъезду совершенно бесплатно! Ведь мы неплохо заработаем,
                   поднимая его на ваш этаж.</p>
               </div>
-              <img src="img/delivery.png" alt="delivery">
+              <div class="service-img">
+                <img src="img/delivery.png" width="136" height="164" alt="delivery">
+              </div>
             </div>
           </li>
-          <li class="services-slider--item">
+          <li class="services-slider--item visuallyHidden">
             <div class="page-item">
               <div class="service-info">
                 <h3>Гарантия</h3>
                 <p>Если из-за возгорания купленного у нас товара у вас сгорит дом — не переживайте, мы выдадим вам новый. Товар, не дом,
                   конечно же.</p>
               </div>
-              <img src="img/warranty.png" alt="warranty">
+              <div class="service-img">
+                <img src="img/warranty.png" width="171" height="194" alt="warranty">
+              </div>
             </div>
           </li>
-          <li class="services-slider--item">
+          <li class="services-slider--item visuallyHidden">
             <div class="page-item">
               <div class="service-info">
                 <h3>Кредит</h3>
                 <p>Залезть в долговую яму стало проще! Кредитные консультанты подберут для вас наиболее выгодные
                   условия кредита. Выгодные для нашего банка, разумеется.</p>
               </div>
-              <img src="img/credit.png" alt="credit">
+              <div class="service-img">
+                <img src="img/credit.png" width="156" height="186" alt="credit">
+              </div>
             </div>
           </li>
         </ul>
       </div>
     </section>
-    <section class="popular-manufacturers">
+    <section class="popular-brands container">
       <h2 hidden>Популярные производители</h2>
-      <ul>
-        <li><a href=""><img src="" alt=""></li>
-        <li><a href=""><img src="" alt=""></li>
-        <li><a href=""><img src="" alt=""></li>
-      </ul>
+      <ul class="page-brands">
+        <li>
+          <a class="block-imges" href="#">
+            <img src="img/logo-1-popular.png" width="260" height="100" alt="logo popular">
+            <img src="img/logo-1-popular-red.png" width="260" height="100" alt="logo popular">
+          </a>
+        </li>
+        <li>
+          <a class="block-imges" href="#">
+            <img src="img/logo-2-popular.png" width="260" height="100" alt="logo popular">
+            <img src="img/logo-2-popular-red.png" width="260" height="100" alt="logo popular">
+          </a>
+        </li>
+        <li>
+          <a class="block-imges" href="#">
+            <img src="img/logo-3-popular.png" width="260" height="100" alt="logo popular">
+            <img src="img/logo-3-popular-red.png" width="260" height="100" alt="logo popular">
+          </a>
+        </li>
+        <li>
+          <a class="block-imges" href="#">
+            <img  src="img/logo-4-popular.png" width="260" height="100" alt="logo popular">
+            <img src="img/logo-4-popular-red.png" width="260" height="100" alt="logo popular">
+          </a>
+        </li>
+      </ul> 
     </section>
-    <div class="promo-contacts">
+    <div class="promo-contacts container">
       <section class="promo">
-        <h2>О нас</h2>
+        <span class="promo-contacts--line"></span>
+        <h3>О нас</h3>
         <p>Огромный выбор гаджетов не оставит равнодушным гика, который есть в каждом из нас.</p>
         <p>Мы можем доставить ваш товар в самые отдаленные точки России! DEVICE работает со многими транспортными компаниями:</p>
-        <strong>Деловые Линии</strong>
-        <strong>Автотрейдинг</strong>
-        <strong>ЖелДорЭкспедиция</strong>
-        <button>Подробнее о нас</button>
+        <ul class="carriers">
+          <li class="carrier">
+            <strong>Деловые Линии</strong>
+          </li>
+          <li class="carrier">
+            <strong>Автотрейдинг</strong>
+          </li>
+          <li class="carrier">
+            <strong>ЖелДорЭкспедиция</strong>
+          </li>
+        </ul>
+        <button class="button promo-btn"><span class="text">Подробнее о нас</span><span class="bg"></span></button>
       </section>
       <section class="contacts">
-        <h2>Контакты</h2>
+        <span class="promo-contacts--line"></span>
+        <h3>Контакты</h3>
         <p>Вы можете забрать товар сами, заехав в наш офис. Заодно, вы сможете проверить работоспособность покупки. Всякое бывает.</p>
-        <button>НАпишите нам</button>
+        <div class="contacts-map">
+          <iframe
+            src="https://yandex.ru/map-widget/v1/?um=constructor%3A642ef8d19241a22f313b8511cc9b561c3dece2db63066985b97fe6817e204fe1&amp;source=constructor"
+            width="560" height="240" frameborder="0"></iframe>
+        </div>
+        <button class="button promo-btn"><span class="text">Напишите нам</span><span class="bg"></span></button>
       </section>
     </div>
   </main>
-  <footer>
-    <div class="top-section">
-      <p class="logo">DEVICE</p>
-      <div class="rigth-block">
-        <button>
-          <img src="img/avatar.png" alt="avatar">
-          <a href="#">Войти</a>
-        </button>
-        <button>
-          <img src="img/compare.png" alt="compare">
-          <a href="#">Сравнить</a>
-        </button>
-        <button>
-          <img src="img/basket.png" alt="basket">
-          <a href="#">Корзина</a>
-        </button>
+  <footer class="footer">
+    <div class="container">
+      <div class="top-section">
+        <p class="footer-logo">DEVICE</p>
+        <div class="rigth-block footer-rigth-block">
+          <button>
+            <img src="img/avatar-footer.png" alt="avatar">
+            <a href="#">Войти</a>
+          </button>
+          <button>
+            <img src="img/compare-footer.png" alt="compare">
+            <a href="#">Сравнить</a>
+          </button>
+          <button>
+            <img src="img/basket-footer.png" alt="basket">
+            <a href="#">Корзина</a>
+          </button>
+        </div>
       </div>
       <div class="middle-section">
         <p class="adress">г. Москва, ул. Строителей, 15</p>
-        <ul class="nav">
+        <ul class="nav footer-nav">
           <li><a href="#">Доставка</a></li>
           <li><a href="#">Гарантия</a></li>
           <li><a href="#">Контакты</a></li>
@@ -290,28 +335,28 @@
         <p class="phone">Тел.: +7 (495) 495-95-95</p>
       </div>
       <div class="bottom-section">
-        <span></span>
+        <span class="footer-line"></span>
         <ul class="footer-social">
           <li>
             <a class="social-button" href="https://www.facebook.com">
-              <span class="visually-hidden">Фейсбук</span>
+              <span class="visuallyHidden">Фейсбук</span>
               <img src="img/faceboock.png" alt="faceboock">
             </a>
           </li>
           <li>
             <a class="social-button" href="https://www.instagram.com">
-              <span class="visually-hidden">Инстаграм</span>
+              <span class="visuallyHidden">Инстаграм</span>
               <img src="img/instagram.png" alt="instagram">
             </a>
           </li>
           <li>
             <a class="social-button" href="https://twitter.com/">
-              <span class="visually-hidden">Твиттер</span>
+              <span class="visuallyHidden">Твиттер</span>
               <img src="img/Twitter.png" alt="Twitter">
             </a>
           </li>
         </ul>
-        <img src="img/logo-html.png" alt="logo html">
+        <img src="img/logo-html.png" width="27" height="35" alt="logo html">
       </div>
     </div>
   </footer>
