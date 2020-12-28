@@ -39,11 +39,12 @@ for (let i = 0; i < paginationBtn.length; i++){
 
 // Services slider
 
-let servicesВutton = document.querySelectorAll('.services-button');
+let servicesВutton = document.querySelectorAll('li.services-button');
 for (let i = 0; i < servicesВutton.length; i++) {
   let btnItem = servicesВutton[0];
-  btnItem.classList.add('active');
+  btnItem.classList.add('act');
 }
+
 let servicesBlocks = document.querySelectorAll('.services-slider--item');
 let arryItems = [];
 for (let i = 0; i < servicesBlocks.length; i++) {
@@ -55,13 +56,12 @@ for (let i = 0; i < servicesBlocks.length; i++) {
 
 let toggleOnClickServices = function (itemBtn, onCart) {
   itemBtn.addEventListener('click', function (e) {
-    let target = e.target;
 
     for (let i = 0; i < servicesВutton.length; i++) {
       let item = servicesВutton[i];
-      item.classList.remove('active');
+      item.classList.remove('act');
     }
-    target.classList.add('active');
+    itemBtn.classList.add('act');
     for (let i = 0; i < servicesBlocks.length; i++) {
       let cart = servicesBlocks[i];
       cart.classList.add('visuallyHidden');

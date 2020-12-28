@@ -1,6 +1,6 @@
 .services-page {
   background: rgb(255, 255, 255);
-  background: linear-gradient(180deg, #ffffff 85px, #e5e5e5 85px);
+  background: linear-gradient(180deg, #ffffff 140px, #e5e5e5 140px);
 }
 
 .services {
@@ -13,7 +13,7 @@
 .services-buttons {
   width: 280px;
   height: 180px;
-  padding-top: 10px;
+  margin-top: 81px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -26,29 +26,38 @@
       background: #f0c52e;
     }
 
-    &:hover {
+    &:hover,
+    &:focus {
       background: #f0c52e;
-    }
-
-    &:active {
-      color: #d6c372;
-      background: #000000;
-      transition: .5s;
-
-      & .bg {
-        background: none;
-      }
     }
   }
 
-  li {
-    transition: .5s;
+  .services-button {
+    width: 280px;
+    height: 40px;
+  }
+}
 
-    &:active {
-      background: #000;
+.act {
+  background: #000000;
+  transition: .5s;
+
+  .button {
+    .bg {
+      background: none;
+    }
+
+    .text {
+      color: #d6c372;
+    }
+
+    &:hover,
+    &:focus {
+      background: #000000;
     }
   }
 }
+
 
 .plank {
   width: 7px;
@@ -58,6 +67,7 @@
 
 .services-slider {
   width: 880px;
+  margin-top: 70px;
   padding-left: 120px;
   padding-right: 60px;
 
