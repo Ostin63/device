@@ -1,3 +1,83 @@
+let contactsMap = document.querySelector('.contacts-map');
+let modalMap = document.querySelector('.modal-map');
+let mapClose = modalMap.querySelector('.map-close');
+let modalOverlay = document.querySelector('.modal-overlay');
+
+let onModalClose = function (evt) {
+  evt.preventDefault();
+  document.querySelector('.modal-show').classList.remove('modal-show');
+  document.querySelector('.show-block').classList.remove('show-block');
+  window.removeEventListener('keydown', onEscapePress)
+};
+
+let onEscapePress = function (evt) {
+  if (evt.keyCode === 27) {
+    onModalClose(evt);
+  }
+};
+
+contactsMap.addEventListener('click', function (evt) {
+  evt.preventDefault();
+  modalMap.classList.add('modal-show');
+  modalOverlay.classList.add('show-block');
+  window.addEventListener('keydown', onEscapePress);
+});
+
+mapClose.addEventListener('click', onModalClose);
+
+
+if (document.querySelector('#modal-feedback')) {
+  let link = document.querySelector('.promo-btn');
+
+  let modalFeedback = document.querySelector('#modal-feedback');
+  let close = modalFeedback.querySelector('.modal-close');
+
+  let feedbackForm = modalFeedback.querySelector('.feedback-form');
+  let fullname = modalFeedback.querySelector('[name=fullname]');
+  let email = modalFeedback.querySelector('[name=email]');
+
+  let isStorageSupport = true;
+  let storage = '';
+
+  try {
+    storage = localStorage.getItem('fullname');
+  } catch (err) {
+    isStorageSupport = false;
+  }
+
+  link.addEventListener('click', function (evt) {
+    evt.preventDefault();
+    modalFeedback.classList.add('modal-show');
+    window.addEventListener('keydown', onEscapePress);
+
+    if (storage) {
+      fullname.value = storage;
+      email.focus();
+    } else {
+      fullname.focus();
+    }
+  });
+
+  close.addEventListener('click', function (evt) {
+    evt.preventDefault();
+    modalFeedback.classList.remove('modal-show');
+    modalFeedback.classList.remove('modal-error');
+  });
+
+  feedbackForm.addEventListener('submit', function (evt) {
+    if (!fullname.value || !email.value) {
+      evt.preventDefault();
+      modalFeedback.classList.remove('modal-error');
+      modalFeedback.offsetWidth = modalFeedback.offsetWidth;
+      modalFeedback.classList.add('modal-error');
+    } else {
+      if (isStorageSupport) {
+        localStorage.setItem('fullname', fullname.value);
+      }
+    }
+  });
+}
+
 // Top slider
 
 let paginationBtn = document.querySelectorAll('.pagination-item span'); // кнопки

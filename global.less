@@ -24,6 +24,46 @@ h3 {
   font-family: "gilroyextrabold", "arial", sans-serif;
 }
 
+@keyframes bounce {
+  0% {
+    transform: translateY(-2000px);
+  }
+
+  70% {
+    transform: translateY(30px);
+  }
+
+  90% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes shake {
+
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateX(-10px);
+  }
+
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translateX(10px);
+  }
+}
 
 @keyframes fadeIn {
   0% {
@@ -91,3 +131,44 @@ ul {
   padding-left: 0;
   margin: 0;
 }
+
+.close {
+  position: absolute;
+  width: 55px;
+  height: 55px;
+  padding: 0;
+  border-radius: 50%;
+  border: none;
+  background: #ebd27f;
+  outline: none;
+
+  &::after {
+    content: "";
+    display: block;
+    width: 30px;
+    height: 1px;
+    margin: 0 auto;
+    background: #ffffff;
+    transform: rotate(45deg);
+  }
+
+  &::before {
+    content: "";
+    display: block;
+    width: 30px;
+    height: 1px;
+    margin: 0 auto;
+    background: #ffffff;
+    transform: rotate(-45deg);
+  }
+
+  &:hover,
+  &:focus {
+    background: #f0c52e;
+  }
+
+  &:active {
+    background: #faedc0;
+  }
+}
+
