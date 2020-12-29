@@ -27,7 +27,7 @@ mapClose.addEventListener('click', onModalClose);
 
 
 if (document.querySelector('#modal-feedback')) {
-  let link = document.querySelector('.promo-btn');
+  let link = document.querySelector('.contacts-btn');
 
   let modalFeedback = document.querySelector('#modal-feedback');
   let close = modalFeedback.querySelector('.modal-close');
@@ -48,6 +48,7 @@ if (document.querySelector('#modal-feedback')) {
   link.addEventListener('click', function (evt) {
     evt.preventDefault();
     modalFeedback.classList.add('modal-show');
+    modalOverlay.classList.add('show-block');
     window.addEventListener('keydown', onEscapePress);
 
     if (storage) {
@@ -62,22 +63,28 @@ if (document.querySelector('#modal-feedback')) {
     evt.preventDefault();
     modalFeedback.classList.remove('modal-show');
     modalFeedback.classList.remove('modal-error');
+    modalOverlay.classList.remove('show-block');
   });
-
+  let fields = feedbackForm.querySelectorAll('.field')
   feedbackForm.addEventListener('submit', function (evt) {
+    
     if (!fullname.value || !email.value) {
       evt.preventDefault();
       modalFeedback.classList.remove('modal-error');
       modalFeedback.offsetWidth = modalFeedback.offsetWidth;
       modalFeedback.classList.add('modal-error');
+      
     } else {
       if (isStorageSupport) {
         localStorage.setItem('fullname', fullname.value);
       }
     }
+    
   });
 }
+/*
 
+*/ 
 // Top slider
 
 let paginationBtn = document.querySelectorAll('.pagination-item span'); // кнопки

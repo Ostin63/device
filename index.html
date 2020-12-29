@@ -311,7 +311,7 @@
         <a class="contacts-map" href="#">
           <img src="img/map.jpg" alt="">
         </a>
-        <button class="button promo-btn"><span class="text">Напишите нам</span><span class="bg"></span></button>
+        <button class="button promo-btn contacts-btn"><span class="text">Напишите нам</span><span class="bg"></span></button>
       </section>
     </div>
   </main>
@@ -369,13 +369,13 @@
       </div>
     </div>
   </footer>
-  <div class="modal-map">
+  <div class="modal modal-map">
     <button class="map-close close"></button>
     <iframe
       src="https://yandex.ru/map-widget/v1/?um=constructor%3A642ef8d19241a22f313b8511cc9b561c3dece2db63066985b97fe6817e204fe1&amp;source=constructor"
       width="994" height="593" frameborder="0"></iframe>
   </div>
-  <section class="modal-feedback" id="modal-feedback">
+  <section class="modal modal-feedback" id="modal-feedback" hidden>
     <div class="modal-name">
       <h2 class="visuallyHidden">Напишите нам</h2>
     </div>
@@ -383,11 +383,11 @@
       <div class="form-item">
         <p class="feedback-item">
           <label for="fullname">Ваше имя:</label>
-          <input type="text" name="fullname" id="fullname" placeholder="Имя Фамилия">
+          <input class="field" type="text" name="fullname" id="fullname" placeholder="Имя Фамилия">
         </p>
         <p class="feedback-item">
           <label for="email">Ваш e-mail:</label>
-          <input type="text" name="email" id="email" placeholder="email@example.com">
+          <input class="field" type="text" name="email" id="email" placeholder="email@example.com">
         </p>
       </div>
       <p class="feedback-item feedback-item-message">

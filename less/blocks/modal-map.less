@@ -1,14 +1,15 @@
-.modal-map {
-  position: relative;
-  display: block;
+.modal {
+  display: none;
+  box-shadow: 0 20px 40px 0 rgba(0, 0, 0, .75);
   position: fixed;
+}
+
+.modal-map {
   width: 994px;
   height: 593px;
-  top: 50px;
+  top: calc(50% - 593px/2);
   left: calc(50% - 994px/2);
-  box-shadow: 0 20px 40px 0 rgba(0, 0, 0, .75);
   z-index: 20;
-  display: none;
 }
 
 .map-close {

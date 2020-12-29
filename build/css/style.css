@@ -162,7 +162,7 @@ h3 {
   cursor: pointer;
   -webkit-transition: 0.5s;
   transition: 0.5s;
-  z-index: 1;
+  z-index: 10;
 }
 .button .text {
   position: absolute;
@@ -204,20 +204,24 @@ ul {
   outline: none;
 }
 .close::after {
+  position: relative;
   content: "";
   display: block;
-  width: 30px;
-  height: 1px;
+  width: 28px;
+  height: 2px;
+  top: -2px;
   margin: 0 auto;
   background: #ffffff;
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
 }
 .close::before {
+  position: relative;
   content: "";
   display: block;
-  width: 30px;
-  height: 1px;
+  width: 28px;
+  height: 2px;
+  left: 1px;
   margin: 0 auto;
   background: #ffffff;
   -webkit-transform: rotate(-45deg);
@@ -956,18 +960,18 @@ ul {
 .footer-social .social-button:active {
   opacity: 0.3;
 }
-.modal-map {
-  position: relative;
-  display: block;
-  position: fixed;
-  width: 994px;
-  height: 593px;
-  top: 50px;
-  left: calc(50% - 994px/2);
+.modal {
+  display: none;
   -webkit-box-shadow: 0 20px 40px 0 rgba(0, 0, 0, 0.75);
           box-shadow: 0 20px 40px 0 rgba(0, 0, 0, 0.75);
+  position: fixed;
+}
+.modal-map {
+  width: 994px;
+  height: 593px;
+  top: calc(50% - 593px/2);
+  left: calc(50% - 994px/2);
   z-index: 20;
-  display: none;
 }
 .map-close {
   top: 22px;
@@ -980,28 +984,21 @@ ul {
           animation-duration: 1.5s;
 }
 .modal-feedback {
-  position: fixed;
-  top: 50px;
-  left: calc(50% - 960px/2);
-  background: #ffffff;
-  -webkit-box-shadow: 0 20px 40px 0 rgba(0, 0, 0, 0.75);
-          box-shadow: 0 20px 40px 0 rgba(0, 0, 0, 0.75);
-  z-index: 20;
-  display: none;
-}
-.feedback-form {
   width: 960px;
-  height: 560px;
+  top: calc(50% - 560px/2);
+  left: calc(50% - 960px/2);
   padding: 80px 100px;
+  background: #ffffff;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  z-index: 20;
 }
 .modal-close {
   top: 22px;
   right: 22px;
 }
 .btn-form {
-  margin-top: 44px;
+  margin-top: 26px;
   width: 200px;
   height: 40px;
 }
@@ -1030,17 +1027,21 @@ ul {
 }
 .feedback-item input,
 .feedback-item textarea {
-  margin-top: 10px;
+  margin-top: 8px;
   padding-left: 20px;
   height: 50px;
   font-size: 14px;
   line-height: 18px;
-  border: none;
+  border: 2px solid #ffffff;
   background: #f2f2f2;
   font-family: "opensanslight", "Arial", sans-serif;
+  outline: none;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 .feedback-item input:hover,
 .feedback-item textarea:hover {
+  border: 2px solid #ebebeb;
   background: #ebebeb;
 }
 .feedback-item input:focus,
@@ -1055,6 +1056,10 @@ ul {
   padding: 20px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+}
+.modal-error {
+  -webkit-animation: shake 0.6s;
+          animation: shake 0.6s;
 }
 .modal-overlay {
   position: fixed;
