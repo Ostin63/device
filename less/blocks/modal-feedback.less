@@ -1,4 +1,7 @@
 .modal-feedback {
+  display: none;
+  box-shadow: 0 20px 40px 0 rgba(0, 0, 0, .75);
+  position: fixed;
   width: 960px;
   top: calc(50% - 560px/2);
   left: calc(50% - 960px/2);
@@ -6,6 +9,13 @@
   background: #ffffff;
   box-sizing: border-box;
   z-index: 20;
+
+
+}
+
+.modal-error {
+  animation: shake .6s;
+  box-shadow: 0 20px 40px 0 rgba(245, 165, 165, 0.75);
 }
 
 .modal-close {
@@ -59,6 +69,11 @@
       border: 2px solid #f7e296;
     }
   }
+
+  .field-error {
+    border: 2px solid #f6dada;
+    background: #f6dada;
+  }
 }
 
 
@@ -70,8 +85,4 @@
     padding: 20px;
     box-sizing: border-box;
   }
-}
-
-.modal-error {
-  animation: shake 0.6s;
 }

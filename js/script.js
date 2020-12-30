@@ -67,7 +67,12 @@ if (document.querySelector('#modal-feedback')) {
   });
   let fields = feedbackForm.querySelectorAll('.field')
   feedbackForm.addEventListener('submit', function (evt) {
-    
+    for (var i = 0; i < fields.length; i++) {
+      let field = fields[i];
+      if (!field.value) {
+        field.classList.add('field-error');
+      }
+    }
     if (!fullname.value || !email.value) {
       evt.preventDefault();
       modalFeedback.classList.remove('modal-error');
@@ -96,7 +101,7 @@ let sliderBlocks = document.querySelectorAll('.slider-block'); // переклю
 let arryCarts = [];
 for (let i = 0; i < sliderBlocks.length; i++){
   let slBlock = sliderBlocks[0];
-  slBlock.classList.remove('visuallyHidden');
+  slBlock.classList.remove('visually-hidden');
   let onCart = sliderBlocks[i];
   arryCarts.push(onCart);
 }
@@ -112,10 +117,10 @@ let toggleOnClick = function (itemBtn, onCart) {
     target.classList.add('active');
     for (let i = 0; i < sliderBlocks.length; i++){
       let cart = sliderBlocks[i];
-      cart.classList.add('visuallyHidden');
+      cart.classList.add('visually-hidden');
       cart.classList.remove('slider-show');
     }
-    onCart.classList.remove('visuallyHidden');
+    onCart.classList.remove('visually-hidden');
     onCart.classList.add('slider-show');
   });
 };
@@ -136,7 +141,7 @@ let servicesBlocks = document.querySelectorAll('.services-slider--item');
 let arryItems = [];
 for (let i = 0; i < servicesBlocks.length; i++) {
   let slBlock = servicesBlocks[0];
-  slBlock.classList.remove('visuallyHidden');
+  slBlock.classList.remove('visually-hidden');
   let onCart = servicesBlocks[i];
   arryItems.push(onCart);
 }
@@ -151,10 +156,10 @@ let toggleOnClickServices = function (itemBtn, onCart) {
     itemBtn.classList.add('act');
     for (let i = 0; i < servicesBlocks.length; i++) {
       let cart = servicesBlocks[i];
-      cart.classList.add('visuallyHidden');
+      cart.classList.add('visually-hidden');
       cart.classList.remove('slider-show');
     }
-    onCart.classList.remove('visuallyHidden');
+    onCart.classList.remove('visually-hidden');
     onCart.classList.add('slider-show');
   });
 };
