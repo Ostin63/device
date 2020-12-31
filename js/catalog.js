@@ -1,7 +1,7 @@
 $(".range-control").slider({
     min: 0,
     max: 5000,
-    values: [2000, 3000],
+    values: [0, 3000],
     range: true,
     animate: "fast",
     slide : function(event, ui) {    
