@@ -92,7 +92,7 @@ if (document.querySelector('#modal-feedback')) {
 */ 
 // Top slider
 
-let paginationBtn = document.querySelectorAll('.pagination-item span'); // кнопки
+let paginationBtn = document.querySelectorAll('.item span'); // кнопки
 for (let i = 0; i < paginationBtn.length; i++) {
   let btnItem = paginationBtn[0];
   btnItem.classList.add('active');
@@ -125,7 +125,7 @@ let toggleOnClick = function (itemBtn, onCart) {
   });
 };
 for (let i = 0; i < paginationBtn.length; i++){
-  let paginationBtn = document.querySelectorAll('.pagination-item span');
+  let paginationBtn = document.querySelectorAll('.item span');
   toggleOnClick(paginationBtn[i], arryCarts[i]);
 }
 

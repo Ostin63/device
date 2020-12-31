@@ -344,13 +344,14 @@ legend {
 }
 
 .catalog-items {
+  width: 830px;
+  padding-top: 70px;
+  padding-left: 70px;
   display: flex;
   flex-direction: column;
+  box-sizing: border-box;
 
   .row {
-    width: 830px;
-    padding-top: 70px;
-    padding-left: 70px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -358,9 +359,146 @@ legend {
   }
 }
 
+.order {
+  position: absolute;
+  width: 360px;
+  height: 379px;
+  padding-top: 170px;
+  box-sizing: border-box;
+  background: rgba(238, 238, 238, 0.702);
+  z-index: 20;
+  display: none;
+
+  a {
+    margin: 0 auto;
+    text-decoration: none;
+    display: block;
+    color: #000000;
+    text-align: center;
+  }
+
+  .bookmark {
+    font-size: 13px;
+    line-height: 36px;
+    opacity: 0.7;
+    font-family: "gilroylight", "Arial", sans-serif;
+    &:hover,
+    &:focus {
+      opacity: 1;
+    }
+    &:active {
+      opacity: 0.3;
+    }
+  }
+
+  .buy {
+    width: 200px;
+    height: 40px;
+    color: #000000;
+    text-align: center;
+
+    .bg {
+      background: #f0c52e;
+    }
+
+    &:hover,
+    &:focus {
+      background: #f0c52e;
+    }
+
+    &:active {
+      color: #a88a20;
+    }
+  }
+}
+
+.catalog-item {
+  width: 360px;
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+
+  .image {
+    position: relative;
+  }
+
+  &:hover,
+  &:focus {
+
+    .order {
+      display: block;
+    }
+  }
+}
+
+.item-info {
+  margin-top: 35px;
+  display: flex;
+  justify-content: space-between;
+
+  .title {
+    width: 260px;
+    font-size: 18px;
+    line-height: 24px;
+    font-family: "gilroyextrabold", "arial", sans-serif;
+  }
+
+  .price {
+    align-self: center;
+  }
+}
+
 .pagination {
+
   .pagination-list {
+    background: #ebebeb;
     display: flex;
     justify-content: space-between;
+  }
+}
+
+.pagination-item {
+  a {
+    margin: 23px 0;
+    padding: 0 30px;
+    display: block;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #000000;
+    font-size: 16px;
+    line-height: 24px;
+    font-family: "gilroyextrabold", "arial", sans-serif;
+    box-sizing: border-box;
+  }
+
+  &:first-child,
+  &:last-child {
+
+    &:hover,
+    &:focus {
+      background: #d9d9d9;
+    }
+
+    &:active {
+      a {
+        opacity: .3;
+      }
+    }
+  }
+
+  &:first-child {
+    margin-right: 160px;
+  }
+
+  &:last-child {
+    margin-left: 160px;
+  }
+
+  &:nth-child(3),
+  &:nth-child(4) {
+    a {
+      color: #a4a4a4;
+    }
   }
 }

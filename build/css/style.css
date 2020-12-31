@@ -620,10 +620,10 @@ ul {
   line-height: 20px;
   font-family: "opensanslight", "arial", sans-serif;
 }
-.block-pagination {
+.pagination-slider {
   position: absolute;
   width: 80px;
-  top: 330px;
+  top: 400px;
   right: 40px;
   list-style: none;
   display: -webkit-box;
@@ -633,7 +633,7 @@ ul {
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
-.pagination-item span {
+.pagination-slider .item span {
   position: absolute;
   content: "";
   display: block;
@@ -643,7 +643,7 @@ ul {
   border: 1px solid #000000;
   z-index: 1;
 }
-.pagination-item .active::before {
+.pagination-slider .item .active::before {
   position: absolute;
   content: "";
   display: block;
@@ -1425,6 +1425,9 @@ legend {
       align-self: center;
 }
 .catalog-items {
+  width: 830px;
+  padding-top: 70px;
+  padding-left: 70px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1432,11 +1435,10 @@ legend {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 .catalog-items .row {
-  width: 830px;
-  padding-top: 70px;
-  padding-left: 70px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1448,11 +1450,130 @@ legend {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
-.pagination .pagination-list {
+.order {
+  position: absolute;
+  width: 360px;
+  height: 379px;
+  padding-top: 170px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background: rgba(238, 238, 238, 0.702);
+  z-index: 20;
+  display: none;
+}
+.order a {
+  margin: 0 auto;
+  text-decoration: none;
+  display: block;
+  color: #000000;
+  text-align: center;
+}
+.order .bookmark {
+  font-size: 13px;
+  line-height: 36px;
+  opacity: 0.7;
+  font-family: "gilroylight", "Arial", sans-serif;
+}
+.order .bookmark:hover,
+.order .bookmark:focus {
+  opacity: 1;
+}
+.order .bookmark:active {
+  opacity: 0.3;
+}
+.order .buy {
+  width: 200px;
+  height: 40px;
+  color: #000000;
+  text-align: center;
+}
+.order .buy .bg {
+  background: #f0c52e;
+}
+.order .buy:hover,
+.order .buy:focus {
+  background: #f0c52e;
+}
+.order .buy:active {
+  color: #a88a20;
+}
+.catalog-item {
+  width: 360px;
+  margin-bottom: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  cursor: pointer;
+}
+.catalog-item .image {
+  position: relative;
+}
+.catalog-item:hover .order,
+.catalog-item:focus .order {
+  display: block;
+}
+.item-info {
+  margin-top: 35px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+.item-info .title {
+  width: 260px;
+  font-size: 18px;
+  line-height: 24px;
+  font-family: "gilroyextrabold", "arial", sans-serif;
+}
+.item-info .price {
+  -ms-flex-item-align: center;
+      align-self: center;
+}
+.pagination .pagination-list {
+  background: #ebebeb;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.pagination-item a {
+  margin: 23px 0;
+  padding: 0 30px;
+  display: block;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #000000;
+  font-size: 16px;
+  line-height: 24px;
+  font-family: "gilroyextrabold", "arial", sans-serif;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.pagination-item:first-child:hover,
+.pagination-item:last-child:hover,
+.pagination-item:first-child:focus,
+.pagination-item:last-child:focus {
+  background: #d9d9d9;
+}
+.pagination-item:first-child:active a,
+.pagination-item:last-child:active a {
+  opacity: 0.3;
+}
+.pagination-item:first-child {
+  margin-right: 160px;
+}
+.pagination-item:last-child {
+  margin-left: 160px;
+}
+.pagination-item:nth-child(3) a,
+.pagination-item:nth-child(4) a {
+  color: #a4a4a4;
 }
