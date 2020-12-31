@@ -1017,12 +1017,6 @@ ul {
           box-sizing: border-box;
   z-index: 20;
 }
-.modal-error {
-  -webkit-animation: shake 0.6s;
-          animation: shake 0.6s;
-  -webkit-box-shadow: 0 20px 40px 0 rgba(245, 165, 165, 0.75);
-          box-shadow: 0 20px 40px 0 rgba(245, 165, 165, 0.75);
-}
 .modal-close {
   top: 22px;
   right: 22px;
@@ -1090,6 +1084,80 @@ ul {
   padding: 20px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+}
+.modal-entry {
+  position: fixed;
+  width: 960px;
+  top: calc(50% - 560px/2);
+  left: calc(50% - 960px/2);
+  padding: 80px 100px;
+  background: #ffffff;
+  -webkit-box-shadow: 0 20px 40px 0 rgba(0, 0, 0, 0.75);
+          box-shadow: 0 20px 40px 0 rgba(0, 0, 0, 0.75);
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  z-index: 20;
+}
+.window-enry {
+  text-align: center;
+}
+.modal-error {
+  -webkit-animation: shake 0.6s;
+          animation: shake 0.6s;
+  -webkit-box-shadow: 0 20px 40px 0 rgba(245, 165, 165, 0.75);
+          box-shadow: 0 20px 40px 0 rgba(245, 165, 165, 0.75);
+}
+.btn-entry {
+  margin-top: 26px;
+  width: 200px;
+  height: 40px;
+}
+.entry-form .form-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.entry-item {
+  width: 360px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.entry-item label {
+  font-size: 18px;
+  line-height: 24px;
+  font-family: "gilroyextrabold", "arial", sans-serif;
+}
+.entry-item input {
+  margin-top: 8px;
+  padding-left: 20px;
+  height: 50px;
+  font-size: 14px;
+  line-height: 18px;
+  border: 2px solid #ffffff;
+  background: #f2f2f2;
+  font-family: "opensanslight", "Arial", sans-serif;
+  outline: none;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.entry-item input:hover {
+  border: 2px solid #ebebeb;
+  background: #ebebeb;
+}
+.entry-item input:focus {
+  border: 2px solid #f7e296;
+}
+.entry-item .field-error {
+  border: 2px solid #f6dada;
+  background: #f6dada;
 }
 .modal-overlay {
   position: fixed;
