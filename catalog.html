@@ -24,19 +24,24 @@
             </form>
           </div>
           <div class="rigth-block">
-            <button type="button">
-              <img src="img/avatar.png" alt="avatar">
-              <span class="name-entry"></span>
-              <a href="#">Войти</a>
-            </button>
-            <button type="button">
-              <img src="img/compare.png" alt="compare">
-              <a href="#">Сравнить</a>
-            </button>
-            <button type="button">
-              <img src="img/basket.png" alt="basket">
-              <a href="#">Корзина</a>
-            </button>
+            <div class="btn-block button-entry">
+              <a href="#" type="button">
+                <img src="img/avatar.png" alt="avatar">
+                <span>Войти</span>
+              </a>
+            </div>
+            <div class="btn-block">
+              <a href="#" type="button">
+                <img src="img/compare.png" alt="compare">
+                <span>Сравнить</span>
+              </a>
+            </div>
+            <div class="btn-block">
+              <a href="#" type="button">
+                <img src="img/basket.png" alt="basket">
+                <span>Корзина</span>
+              </a>
+            </div>
           </div>
         </div>
         <div class="bottom-nav-site">
@@ -242,18 +247,24 @@
       <div class="top-section">
         <a class="footer-logo" href="index.html">DEVICE</a>
         <div class="rigth-block footer-rigth-block">
-          <button type="button">
-            <img src="img/avatar-footer.png" alt="avatar">
-            <a href="#">Войти</a>
-          </button>
-          <button type="button">
-            <img src="img/compare-footer.png" alt="compare">
-            <a href="#">Сравнить</a>
-          </button>
-          <button type="button">
-            <img src="img/basket-footer.png" alt="basket">
-            <a href="#">Корзина</a>
-          </button>
+          <div class="btn-block button-entry">
+            <a href="#" type="button">
+              <img src="img/avatar-footer.png" alt="avatar">
+              <span>Войти</span>
+            </a>
+          </div>
+          <div class="btn-block">
+            <a href="#" type="button">
+              <img src="img/compare-footer.png" alt="compare">
+              <span>Сравнить</span>
+            </a>
+          </div>
+          <div class="btn-block">
+            <a href="#" type="button">
+              <img src="img/basket-footer.png" alt="basket">
+              <span>Корзина</span>
+            </a>
+          </div>
         </div>
       </div>
       <div class="middle-section">
@@ -293,6 +304,26 @@
       </div>
     </div>
   </footer>
+  <section class="modal-entry" id="entry" hidden>
+    <div class="window-entry">
+      <h2>Пожалуйста авторизуйтесь</h2>
+    </div>
+    <form class="entry-form" action="https://echo.htmlacademy.ru" method="post">
+      <div class="form-item">
+        <p class="entry-item">
+          <label for="mail">Ваш e-mail:</label>
+          <input class="field" type="text" name="email" id="mail" placeholder="email@example.com">
+        </p>
+        <p class="entry-item">
+          <label for="password">Пароль:</label>
+          <input class="field" type="password" name="password" id="password" placeholder="Пароль">
+        </p>
+      </div>
+      <button class="button btn-entry" type="submit"><span class="text">Отправить</span><span class="bg"></span></button>
+      <button class="modal-close modal-close-entry close" type="button"></button>
+    </form>
+  </section>
+  <div class="modal-overlay"></div>
   <script src="js/jQuery3.3.1.min.js"></script>
   <script src="https://atuin.ru/demo/ui-slider/jquery-ui.min.js"></script>
   <script src="https://atuin.ru/demo/ui-slider/jquery.ui.touch-punch.min.js"></script>

@@ -1,5 +1,5 @@
 .modal-entry {
-  //display: none;
+  display: none;
   position: fixed;
   width: 960px;
   top: calc(50% - 560px/2);
@@ -10,16 +10,17 @@
   box-sizing: border-box;
   z-index: 20;
 }
-.window-enry {
+
+.window-entry {
   text-align: center;
 }
+
 .modal-error {
   animation: shake .6s;
   box-shadow: 0 20px 40px 0 rgba(245, 165, 165, 0.75);
 }
 
 .btn-entry {
-  margin-top: 26px;
   width: 200px;
   height: 40px;
 }
@@ -68,4 +69,34 @@
     border: 2px solid #f6dada;
     background: #f6dada;
   }
+}
+
+.entry-checkbox {
+  width: 130px;
+  height: 40px;
+  margin: 0;
+  flex-direction: row;
+  justify-content: space-between;
+  box-sizing: border-box;
+
+  label {
+    order: 2;
+    align-self: center;
+  }
+
+  input {
+    height: 40px;
+    order: 1;
+    margin: 0;
+
+    &:checked {
+      background: #f7e296;
+    }
+  }
+}
+
+.checkbox-entry {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
 }

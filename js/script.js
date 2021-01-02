@@ -2,12 +2,21 @@ let contactsMap = document.querySelector('.contacts-map');
 let modalMap = document.querySelector('.modal-map');
 let mapClose = modalMap.querySelector('.map-close');
 let modalOverlay = document.querySelector('.modal-overlay');
+let modalEntry = document.querySelector('.modal-entry');
+let entryButtons = document.querySelectorAll('.button-entry');
+let modalCloseEntry = modalEntry.querySelector('.modal-close-entry');
+let formEntry = modalEntry.querySelector('.entry-form');
+let entryFields = formEntry.querySelectorAll('.entry-field');
+let entryMail = formEntry.querySelector('.entry-mail');
+let entryPassword = formEntry.querySelector('.entry-password');
+let storageMail = localStorage.getItem('email');
+let staragePassword = localStorage.getItem('password')
 
 let onModalClose = function (evt) {
   evt.preventDefault();
   document.querySelector('.modal-show').classList.remove('modal-show');
   document.querySelector('.show-block').classList.remove('show-block');
-  window.removeEventListener('keydown', onEscapePress)
+  window.removeEventListener('keydown', onEscapePress);
 };
 
 let onEscapePress = function (evt) {
@@ -16,6 +25,56 @@ let onEscapePress = function (evt) {
   }
 };
 
+let isStorageSupport = true;
+let storage = '';
+
+
+
+if (document.querySelector('.entry-form')){
+for (let i = 0; i < entryButtons.length; i++) {
+  let entryButton = entryButtons[i];
+  entryButton.addEventListener('click', function (evt) {
+    evt.preventDefault();
+    modalEntry.classList.add('modal-show');
+    modalOverlay.classList.add('show-block');
+    window.addEventListener('keydown', onEscapePress);
+
+    try {
+      storage = localStorage.getItem('storageMail');
+    } catch (err) {
+      isStorageSupport = false;
+    }
+
+    if (storage) {
+      entryMail.value = storage;
+      entryPassword.focus()
+
+    } else {
+      entryMail.focus();
+    }
+    if (staragePassword) {
+      password.value = staragePassword
+    }
+  });
+  modalCloseEntry.addEventListener('click', onModalClose);
+};
+
+formEntry.addEventListener('submit', function (evt) {
+  evt.preventDefault();
+  for (let i = 0; i < entryFields.length; i++) {
+    let entryField = entryFields[i];
+    if (!entryField.value) {
+      entryField.classList.add('field-error');
+      modalEntry.classList.add('modal-error');
+    } else {
+      entryField.classList.remove('field-error');
+    }
+  };
+  if (isStorageSupport) {
+    localStorage.setItem('mail', entryMail.value)
+  }
+});
+};
 contactsMap.addEventListener('click', function (evt) {
   evt.preventDefault();
   modalMap.classList.add('modal-show');
@@ -35,9 +94,6 @@ if (document.querySelector('#modal-feedback')) {
   let feedbackForm = modalFeedback.querySelector('.feedback-form');
   let fullname = modalFeedback.querySelector('[name=fullname]');
   let email = modalFeedback.querySelector('[name=email]');
-
-  let isStorageSupport = true;
-  let storage = '';
 
   try {
     storage = localStorage.getItem('fullname');
@@ -71,6 +127,8 @@ if (document.querySelector('#modal-feedback')) {
       let field = fields[i];
       if (!field.value) {
         field.classList.add('field-error');
+      } else {
+        field.classList.remove('field-error');
       }
     }
     if (!fullname.value || !email.value) {
@@ -78,18 +136,18 @@ if (document.querySelector('#modal-feedback')) {
       modalFeedback.classList.remove('modal-error');
       modalFeedback.offsetWidth = modalFeedback.offsetWidth;
       modalFeedback.classList.add('modal-error');
-      
+
     } else {
       if (isStorageSupport) {
         localStorage.setItem('fullname', fullname.value);
       }
     }
-    
+
   });
 }
 /*
 
-*/ 
+*/
 // Top slider
 
 let paginationBtn = document.querySelectorAll('.item span'); // кнопки
@@ -99,7 +157,7 @@ for (let i = 0; i < paginationBtn.length; i++) {
 }
 let sliderBlocks = document.querySelectorAll('.slider-block'); // переключаемые блки
 let arryCarts = [];
-for (let i = 0; i < sliderBlocks.length; i++){
+for (let i = 0; i < sliderBlocks.length; i++) {
   let slBlock = sliderBlocks[0];
   slBlock.classList.remove('visually-hidden');
   let onCart = sliderBlocks[i];
@@ -115,7 +173,7 @@ let toggleOnClick = function (itemBtn, onCart) {
       item.classList.remove('active');
     }
     target.classList.add('active');
-    for (let i = 0; i < sliderBlocks.length; i++){
+    for (let i = 0; i < sliderBlocks.length; i++) {
       let cart = sliderBlocks[i];
       cart.classList.add('visually-hidden');
       cart.classList.remove('slider-show');
@@ -124,7 +182,7 @@ let toggleOnClick = function (itemBtn, onCart) {
     onCart.classList.add('slider-show');
   });
 };
-for (let i = 0; i < paginationBtn.length; i++){
+for (let i = 0; i < paginationBtn.length; i++) {
   let paginationBtn = document.querySelectorAll('.item span');
   toggleOnClick(paginationBtn[i], arryCarts[i]);
 }

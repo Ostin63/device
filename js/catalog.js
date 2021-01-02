@@ -1,3 +1,33 @@
+let modalOverlay = document.querySelector('.modal-overlay');
+let modalEntry = document.querySelector('.modal-entry');
+let entryButtons = document.querySelectorAll('.button-entry');
+let modalCloseEntry = modalEntry.querySelector('.modal-close-entry');
+
+let onModalClose = function (evt) {
+    evt.preventDefault();
+    document.querySelector('.modal-show').classList.remove('modal-show');
+    document.querySelector('.show-block').classList.remove('show-block');
+    window.removeEventListener('keydown', onEscapePress);
+};
+
+let onEscapePress = function (evt) {
+    if (evt.keyCode === 27) {
+        onModalClose(evt);
+    }
+};
+
+for (let i = 0; i < entryButtons.length; i++) {
+    let entryButton = entryButtons[i];
+    entryButton.addEventListener('click', function (evt) {
+        evt.preventDefault();
+        modalEntry.classList.add('modal-show');
+        modalOverlay.classList.add('show-block');
+        window.removeEventListener('keydown', onEscapePress);
+    });
+    modalCloseEntry.addEventListener('click', onModalClose);
+};
+
+
 $(".range-control").slider({
     min: 0,
     max: 5000,
