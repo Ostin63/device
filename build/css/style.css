@@ -843,10 +843,6 @@ ul {
   display: block;
   background: #000000;
 }
-.promo-contacts--line h3 {
-  font-size: 47px;
-  line-height: 48px;
-}
 .promo {
   width: 460px;
   display: -webkit-box;
@@ -856,6 +852,10 @@ ul {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+.promo h3 {
+  font-size: 47px;
+  line-height: 48px;
 }
 .contacts {
   width: 560px;
@@ -867,6 +867,10 @@ ul {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+.contacts h3 {
+  font-size: 47px;
+  line-height: 48px;
 }
 .carriers {
   margin-top: 30px;

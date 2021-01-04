@@ -30,50 +30,50 @@ let storage = '';
 
 
 
-if (document.querySelector('.entry-form')){
-for (let i = 0; i < entryButtons.length; i++) {
-  let entryButton = entryButtons[i];
-  entryButton.addEventListener('click', function (evt) {
+if (document.querySelector('.entry-form')) {
+  for (let i = 0; i < entryButtons.length; i++) {
+    let entryButton = entryButtons[i];
+    entryButton.addEventListener('click', function (evt) {
+      evt.preventDefault();
+      modalEntry.classList.add('modal-show');
+      modalOverlay.classList.add('show-block');
+      window.addEventListener('keydown', onEscapePress);
+
+      try {
+        storage = localStorage.getItem('storageMail');
+      } catch (err) {
+        isStorageSupport = false;
+      }
+
+      if (storage) {
+        entryMail.value = storage;
+        entryPassword.focus()
+
+      } else {
+        entryMail.focus();
+      }
+      if (staragePassword) {
+        password.value = staragePassword
+      }
+    });
+    modalCloseEntry.addEventListener('click', onModalClose);
+  };
+
+  formEntry.addEventListener('submit', function (evt) {
     evt.preventDefault();
-    modalEntry.classList.add('modal-show');
-    modalOverlay.classList.add('show-block');
-    window.addEventListener('keydown', onEscapePress);
-
-    try {
-      storage = localStorage.getItem('storageMail');
-    } catch (err) {
-      isStorageSupport = false;
-    }
-
-    if (storage) {
-      entryMail.value = storage;
-      entryPassword.focus()
-
-    } else {
-      entryMail.focus();
-    }
-    if (staragePassword) {
-      password.value = staragePassword
+    for (let i = 0; i < entryFields.length; i++) {
+      let entryField = entryFields[i];
+      if (!entryField.value) {
+        entryField.classList.add('field-error');
+        modalEntry.classList.add('modal-error');
+      } else {
+        entryField.classList.remove('field-error');
+      }
+    };
+    if (isStorageSupport) {
+      localStorage.setItem('mail', entryMail.value)
     }
   });
-  modalCloseEntry.addEventListener('click', onModalClose);
-};
-
-formEntry.addEventListener('submit', function (evt) {
-  evt.preventDefault();
-  for (let i = 0; i < entryFields.length; i++) {
-    let entryField = entryFields[i];
-    if (!entryField.value) {
-      entryField.classList.add('field-error');
-      modalEntry.classList.add('modal-error');
-    } else {
-      entryField.classList.remove('field-error');
-    }
-  };
-  if (isStorageSupport) {
-    localStorage.setItem('mail', entryMail.value)
-  }
-});
 };
 contactsMap.addEventListener('click', function (evt) {
   evt.preventDefault();
@@ -155,7 +155,7 @@ for (let i = 0; i < paginationBtn.length; i++) {
   let btnItem = paginationBtn[0];
   btnItem.classList.add('active');
 }
-let sliderBlocks = document.querySelectorAll('.slider-block'); // переключаемые блки
+let sliderBlocks = document.querySelectorAll('.slider-block'); // переключаемые блоки
 let arryCarts = [];
 for (let i = 0; i < sliderBlocks.length; i++) {
   let slBlock = sliderBlocks[0];
@@ -163,6 +163,16 @@ for (let i = 0; i < sliderBlocks.length; i++) {
   let onCart = sliderBlocks[i];
   arryCarts.push(onCart);
 }
+
+let arrowLeft = document.querySelector('.arrow-leht');
+let arrowRight = document.querySelector('.arrow-right');
+
+arrowRight.addEventListener('click', function () {
+  if (onCart < sliderBlocks.length) {
+    onCart++;
+    
+  }
+});
 
 let toggleOnClick = function (itemBtn, onCart) {
   itemBtn.addEventListener('click', function (e) {
@@ -183,7 +193,6 @@ let toggleOnClick = function (itemBtn, onCart) {
   });
 };
 for (let i = 0; i < paginationBtn.length; i++) {
-  let paginationBtn = document.querySelectorAll('.item span');
   toggleOnClick(paginationBtn[i], arryCarts[i]);
 }
 
@@ -205,7 +214,7 @@ for (let i = 0; i < servicesBlocks.length; i++) {
 }
 
 let toggleOnClickServices = function (itemBtn, onCart) {
-  itemBtn.addEventListener('click', function (e) {
+  itemBtn.addEventListener('click', function () {
 
     for (let i = 0; i < servicesВutton.length; i++) {
       let item = servicesВutton[i];
@@ -222,6 +231,5 @@ let toggleOnClickServices = function (itemBtn, onCart) {
   });
 };
 for (let i = 0; i < servicesВutton.length; i++) {
-  let servicesВutton = document.querySelectorAll('.services-button');
   toggleOnClickServices(servicesВutton[i], arryItems[i]);
 }

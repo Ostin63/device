@@ -42,7 +42,7 @@ $(".range-control").slider({
 $(".min-price").val($(".range-control").slider("values", 0));
 $(".max-price").val($(".range-control").slider("values", 1));
 $(".range-filter input").change(function() {
-    var input_left = $(".min-price").val().replace(/[^0-9]/g, ''),    
+    let input_left = $(".min-price").val().replace(/[^0-9]/g, ''),    
     opt_left = $(".range-control").slider("option", "min"),
     where_right = $(".range-control").slider("values", 1),
     input_right = $(".max-price").val().replace(/[^0-9]/g, ''),    
