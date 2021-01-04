@@ -27,7 +27,8 @@
             <div class="btn-block button-entry">
               <a href="#" type="button">
                 <img src="img/avatar.png" alt="avatar">
-                <span>Войти</span>
+                <span class="enter-name"></span>
+                <span class="enter">Войти</span>
               </a>
             </div>
             <div class="btn-block">
@@ -311,15 +312,23 @@
     <form class="entry-form" action="https://echo.htmlacademy.ru" method="post">
       <div class="form-item">
         <p class="entry-item">
-          <label for="mail">Ваш e-mail:</label>
-          <input class="field" type="text" name="email" id="mail" placeholder="email@example.com">
+          <label for="name">Ваше Имя:</label>
+          <input class="entry-field entry-name" type="text" name="name" id="name" placeholder="Введите имя">
         </p>
         <p class="entry-item">
           <label for="password">Пароль:</label>
-          <input class="field" type="password" name="password" id="password" placeholder="Пароль">
+          <input class="entry-field entry-password" type="password" name="password" id="password"
+            placeholder="Введите Пароль">
         </p>
       </div>
-      <button class="button btn-entry" type="submit"><span class="text">Отправить</span><span class="bg"></span></button>
+      <div class="checkbox-entry">
+        <p class="entry-item entry-checkbox">
+          <label for="checkbox">Запомнить</label>
+          <input class="entry-field" type="checkbox" name="checkbox" id="checkbox" checked>
+        </p>
+        <button class="button btn-entry" type="submit"><span class="text">Отправить</span><span
+            class="bg"></span></button>
+      </div>
       <button class="modal-close modal-close-entry close" type="button"></button>
     </form>
   </section>

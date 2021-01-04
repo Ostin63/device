@@ -3,14 +3,18 @@ let modalMap = document.querySelector('.modal-map');
 let mapClose = modalMap.querySelector('.map-close');
 let modalOverlay = document.querySelector('.modal-overlay');
 let modalEntry = document.querySelector('.modal-entry');
-let entryButtons = document.querySelectorAll('.button-entry');
+let entryButtons = document.querySelectorAll('.button-entry .enter');
 let modalCloseEntry = modalEntry.querySelector('.modal-close-entry');
 let formEntry = modalEntry.querySelector('.entry-form');
 let entryFields = formEntry.querySelectorAll('.entry-field');
-let entryMail = formEntry.querySelector('.entry-mail');
+let entryName = formEntry.querySelector('.entry-name');
 let entryPassword = formEntry.querySelector('.entry-password');
+let storageName = localStorage.getItem('name');
 let storageMail = localStorage.getItem('email');
-let staragePassword = localStorage.getItem('password')
+let staragePassword = localStorage.getItem('password');
+let enterName = document.querySelector('.enter-name');
+let enter = document.querySelector('.enter');
+let escapeButton = document.querySelector('.button-entry .escape');
 
 let onModalClose = function (evt) {
   evt.preventDefault();
@@ -27,8 +31,19 @@ let onEscapePress = function (evt) {
 
 let isStorageSupport = true;
 let storage = '';
+if (storageName !== null) {
+  enterName.textContent = storageName;
+  enter.classList.add('d-none');
+  escapeButton.classList.remove('d-none');
+} else {
+  enterName.textContent = '';
+  enter.classList.remove('none');
+  escapeButton.classList.add('d-none');
+}
 
-
+escapeButton.addEventListener('click', function () {
+  localStorage.removeItem('name');
+})
 
 if (document.querySelector('.entry-form')) {
   for (let i = 0; i < entryButtons.length; i++) {
@@ -46,11 +61,11 @@ if (document.querySelector('.entry-form')) {
       }
 
       if (storage) {
-        entryMail.value = storage;
-        entryPassword.focus()
+        entryName.value = storage;
+        entryPassword.focus();
 
       } else {
-        entryMail.focus();
+        entryName.focus();
       }
       if (staragePassword) {
         password.value = staragePassword
@@ -60,7 +75,7 @@ if (document.querySelector('.entry-form')) {
   };
 
   formEntry.addEventListener('submit', function (evt) {
-    evt.preventDefault();
+
     for (let i = 0; i < entryFields.length; i++) {
       let entryField = entryFields[i];
       if (!entryField.value) {
@@ -70,8 +85,15 @@ if (document.querySelector('.entry-form')) {
         entryField.classList.remove('field-error');
       }
     };
-    if (isStorageSupport) {
-      localStorage.setItem('mail', entryMail.value)
+    if (!entryName.value || !password.value) {
+      evt.preventDefault();
+      modalEntry.classList.remove('modal-error');
+      modalEntry.classList.add('modal-error');
+
+    } else {
+      if (isStorageSupport) {
+        localStorage.setItem('name', entryName.value);
+      }
     }
   });
 };
@@ -131,23 +153,13 @@ if (document.querySelector('#modal-feedback')) {
         field.classList.remove('field-error');
       }
     }
-    if (!fullname.value || !email.value) {
-      evt.preventDefault();
-      modalFeedback.classList.remove('modal-error');
-      modalFeedback.offsetWidth = modalFeedback.offsetWidth;
-      modalFeedback.classList.add('modal-error');
-
-    } else {
-      if (isStorageSupport) {
-        localStorage.setItem('fullname', fullname.value);
-      }
+    if (isStorageSupport) {
+      localStorage.setItem('fullname', fullname.value);
     }
 
   });
 }
-/*
 
-*/
 // Top slider
 
 let paginationBtn = document.querySelectorAll('.item span'); // кнопки
@@ -168,7 +180,7 @@ let arrowRight = document.querySelector('.arrow-right');
 arrowRight.addEventListener('click', function () {
   if (onCart < sliderBlocks.length) {
     onCart++;
-    
+
   }
 });
 
