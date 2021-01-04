@@ -1,6 +1,6 @@
 let modalOverlay = document.querySelector('.modal-overlay');
 let modalEntry = document.querySelector('.modal-entry');
-let entryButtons = document.querySelectorAll('.button-entry');
+let entryButtons = document.querySelectorAll('.button-entry .enter');
 let modalCloseEntry = modalEntry.querySelector('.modal-close-entry');
 let formEntry = modalEntry.querySelector('.entry-form');
 let entryFields = formEntry.querySelectorAll('.entry-field');
@@ -11,6 +11,7 @@ let storageMail = localStorage.getItem('email');
 let staragePassword = localStorage.getItem('password');
 let enterName = document.querySelector('.enter-name');
 let enter = document.querySelector('.enter');
+let escapeButton = document.querySelector('.button-entry .escape');
 
 let onModalClose = function (evt) {
     evt.preventDefault();
@@ -27,13 +28,20 @@ let onEscapePress = function (evt) {
 
 let isStorageSupport = true;
 let storage = '';
+
 if (storageName !== null) {
     enterName.textContent = storageName;
-    enter.classList.add('hover');
+    enter.classList.add('d-none');
+    escapeButton.classList.remove('d-none');
 } else {
     enterName.textContent = '';
-    enter.classList.remove('hover');
+    enter.classList.remove('none');
+    escapeButton.classList.add('d-none');
 }
+
+escapeButton.addEventListener('click', function () {
+    localStorage.removeItem('name');
+});
 
 if (document.querySelector('.entry-form')) {
     for (let i = 0; i < entryButtons.length; i++) {

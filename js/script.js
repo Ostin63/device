@@ -31,6 +31,7 @@ let onEscapePress = function (evt) {
 
 let isStorageSupport = true;
 let storage = '';
+
 if (storageName !== null) {
   enterName.textContent = storageName;
   enter.classList.add('d-none');
@@ -43,7 +44,7 @@ if (storageName !== null) {
 
 escapeButton.addEventListener('click', function () {
   localStorage.removeItem('name');
-})
+});
 
 if (document.querySelector('.entry-form')) {
   for (let i = 0; i < entryButtons.length; i++) {
