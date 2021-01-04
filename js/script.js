@@ -156,13 +156,11 @@ for (let i = 0; i < paginationBtn.length; i++) {
   btnItem.classList.add('active');
 }
 let sliderBlocks = document.querySelectorAll('.slider-block'); // переключаемые блоки
-let arryCarts = [];
+
 for (let i = 0; i < sliderBlocks.length; i++) {
-  let slBlock = sliderBlocks[0];
-  slBlock.classList.remove('visually-hidden');
-  let onCart = sliderBlocks[i];
-  arryCarts.push(onCart);
-}
+  let sliderBlock = sliderBlocks[0];
+  sliderBlock.classList.remove('visually-hidden');
+};
 
 let arrowLeft = document.querySelector('.arrow-leht');
 let arrowRight = document.querySelector('.arrow-right');
@@ -193,7 +191,7 @@ let toggleOnClick = function (itemBtn, onCart) {
   });
 };
 for (let i = 0; i < paginationBtn.length; i++) {
-  toggleOnClick(paginationBtn[i], arryCarts[i]);
+  toggleOnClick(paginationBtn[i], sliderBlocks[i]);
 }
 
 // Services slider
@@ -205,12 +203,10 @@ for (let i = 0; i < servicesВutton.length; i++) {
 }
 
 let servicesBlocks = document.querySelectorAll('.services-slider--item');
-let arryItems = [];
+
 for (let i = 0; i < servicesBlocks.length; i++) {
-  let slBlock = servicesBlocks[0];
-  slBlock.classList.remove('visually-hidden');
-  let onCart = servicesBlocks[i];
-  arryItems.push(onCart);
+  let sliderBlock = servicesBlocks[0];
+  sliderBlock.classList.remove('visually-hidden');
 }
 
 let toggleOnClickServices = function (itemBtn, onCart) {
@@ -231,5 +227,5 @@ let toggleOnClickServices = function (itemBtn, onCart) {
   });
 };
 for (let i = 0; i < servicesВutton.length; i++) {
-  toggleOnClickServices(servicesВutton[i], arryItems[i]);
+  toggleOnClickServices(servicesВutton[i], servicesBlocks[i]);
 }
