@@ -202,9 +202,9 @@ let arrowRight = document.querySelector('.arrow-right');
 let toggleOnClick = function (itemBtn, onCart) {
   let currentSlide = 0;
   function goToSlide(n) {
-    sliderBlocks[currentSlide].classList.remove('show-block');
+    sliderBlocks[currentSlide].classList.remove('show-block', 'slider-show');
     currentSlide = (n + sliderBlocks.length) % sliderBlocks.length;
-    sliderBlocks[currentSlide].classList.add('show-block');
+    sliderBlocks[currentSlide].classList.add('show-block', 'slider-show');
   }
   
   arrowRight.addEventListener('click', function () {
