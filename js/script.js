@@ -13,8 +13,7 @@ let storageName = localStorage.getItem('name');
 let storageMail = localStorage.getItem('email');
 let staragePassword = localStorage.getItem('password');
 let enterName = document.querySelector('.enter-name');
-let enter = document.querySelector('.enter');
-let escapeButton = document.querySelector('.button-entry .escape');
+let escapeButtons = document.querySelectorAll('.button-entry .escape');
 
 let onModalClose = function (evt) {
   evt.preventDefault();
@@ -32,23 +31,40 @@ let onEscapePress = function (evt) {
 let isStorageSupport = true;
 let storage = '';
 
+
+
 if (storageName !== null) {
   enterName.textContent = storageName;
-  enter.classList.add('d-none');
-  escapeButton.classList.remove('d-none');
+  for (i = 0; i < entryButtons.length; i++) {
+    let entryButton = entryButtons[i];
+    entryButton.classList.add('d-none');
+  }
+  for (let i = 0; i < escapeButtons.length; i++) {
+    let escapeButton = escapeButtons[i];
+    escapeButton.classList.remove('d-none');
+  }
 } else {
   enterName.textContent = '';
-  enter.classList.remove('none');
-  escapeButton.classList.add('d-none');
+  for (i = 0; i < entryButtons.length; i++) {
+    let entryButton = entryButtons[i];
+    entryButton.classList.remove('d-none');
+  }
+  for (let i = 0; i < escapeButtons.length; i++) {
+    let escapeButton = escapeButtons[i];
+    escapeButton.classList.add('d-none');
+  }
 }
-
-escapeButton.addEventListener('click', function () {
-  localStorage.removeItem('name');
-});
+for (let i = 0; i < escapeButtons.length; i++) {
+  let escapeButton = escapeButtons[i];
+  escapeButton.addEventListener('click', function () {
+    localStorage.removeItem('name');
+  });
+}
 
 if (document.querySelector('.entry-form')) {
   for (let i = 0; i < entryButtons.length; i++) {
     let entryButton = entryButtons[i];
+
     entryButton.addEventListener('click', function (evt) {
       evt.preventDefault();
       modalEntry.classList.add('modal-show');
@@ -98,6 +114,9 @@ if (document.querySelector('.entry-form')) {
     }
   });
 };
+
+// Map
+
 contactsMap.addEventListener('click', function (evt) {
   evt.preventDefault();
   modalMap.classList.add('modal-show');
@@ -163,9 +182,9 @@ if (document.querySelector('#modal-feedback')) {
 
 // Top slider
 
-let paginationBtn = document.querySelectorAll('.item span'); // кнопки
-for (let i = 0; i < paginationBtn.length; i++) {
-  let btnItem = paginationBtn[0];
+let paginationBtns = document.querySelectorAll('.item span'); // кнопки
+for (let i = 0; i < paginationBtns.length; i++) {
+  let btnItem = paginationBtns[0];
   btnItem.classList.add('active');
 }
 let sliderBlocks = document.querySelectorAll('.slider-block'); // переключаемые блоки
@@ -189,8 +208,8 @@ let toggleOnClick = function (itemBtn, onCart) {
   itemBtn.addEventListener('click', function (e) {
     let target = e.target;
 
-    for (let i = 0; i < paginationBtn.length; i++) {
-      let item = paginationBtn[i];
+    for (let i = 0; i < paginationBtns.length; i++) {
+      let item = paginationBtns[i];
       item.classList.remove('active');
     }
     target.classList.add('active');
@@ -203,15 +222,15 @@ let toggleOnClick = function (itemBtn, onCart) {
     onCart.classList.add('slider-show');
   });
 };
-for (let i = 0; i < paginationBtn.length; i++) {
-  toggleOnClick(paginationBtn[i], sliderBlocks[i]);
+for (let i = 0; i < paginationBtns.length; i++) {
+  toggleOnClick(paginationBtns[i], sliderBlocks[i]);
 }
 
 // Services slider
 
-let servicesВutton = document.querySelectorAll('li.services-button');
-for (let i = 0; i < servicesВutton.length; i++) {
-  let btnItem = servicesВutton[0];
+let servicesВuttons = document.querySelectorAll('li.services-button');
+for (let i = 0; i < servicesВuttons.length; i++) {
+  let btnItem = servicesВuttons[0];
   btnItem.classList.add('act');
 }
 
@@ -225,8 +244,8 @@ for (let i = 0; i < servicesBlocks.length; i++) {
 let toggleOnClickServices = function (itemBtn, onCart) {
   itemBtn.addEventListener('click', function () {
 
-    for (let i = 0; i < servicesВutton.length; i++) {
-      let item = servicesВutton[i];
+    for (let i = 0; i < servicesВuttons.length; i++) {
+      let item = servicesВuttons[i];
       item.classList.remove('act');
     }
     itemBtn.classList.add('act');
@@ -239,6 +258,6 @@ let toggleOnClickServices = function (itemBtn, onCart) {
     onCart.classList.add('slider-show');
   });
 };
-for (let i = 0; i < servicesВutton.length; i++) {
-  toggleOnClickServices(servicesВutton[i], servicesBlocks[i]);
+for (let i = 0; i < servicesВuttons.length; i++) {
+  toggleOnClickServices(servicesВuttons[i], servicesBlocks[i]);
 }

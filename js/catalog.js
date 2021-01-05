@@ -10,8 +10,7 @@ let storageName = localStorage.getItem('name');
 let storageMail = localStorage.getItem('email');
 let staragePassword = localStorage.getItem('password');
 let enterName = document.querySelector('.enter-name');
-let enter = document.querySelector('.enter');
-let escapeButton = document.querySelector('.button-entry .escape');
+let escapeButtons = document.querySelectorAll('.button-entry .escape');
 
 let onModalClose = function (evt) {
     evt.preventDefault();
@@ -31,17 +30,31 @@ let storage = '';
 
 if (storageName !== null) {
     enterName.textContent = storageName;
-    enter.classList.add('d-none');
-    escapeButton.classList.remove('d-none');
+    for (i = 0; i < entryButtons.length; i++) {
+        let entryButton = entryButtons[i];
+        entryButton.classList.add('d-none');
+    }
+    for (let i = 0; i < escapeButtons.length; i++) {
+        let escapeButton = escapeButtons[i];
+        escapeButton.classList.remove('d-none');
+    }
 } else {
     enterName.textContent = '';
-    enter.classList.remove('none');
-    escapeButton.classList.add('d-none');
+    for (i = 0; i < entryButtons.length; i++) {
+        let entryButton = entryButtons[i];
+        entryButton.classList.remove('d-none');
+    }
+    for (let i = 0; i < escapeButtons.length; i++) {
+        let escapeButton = escapeButtons[i];
+        escapeButton.classList.add('d-none');
+    }
 }
-
-escapeButton.addEventListener('click', function () {
-    localStorage.removeItem('name');
-});
+for (let i = 0; i < escapeButtons.length; i++) {
+    let escapeButton = escapeButtons[i];
+    escapeButton.addEventListener('click', function () {
+        localStorage.removeItem('name');
+    });
+}
 
 if (document.querySelector('.entry-form')) {
     for (let i = 0; i < entryButtons.length; i++) {
