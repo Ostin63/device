@@ -193,16 +193,29 @@ for (let i = 0; i < sliderBlocks.length; i++) {
   let sliderBlock = sliderBlocks[0];
   sliderBlock.classList.remove('visually-hidden');
 };
-
+/*
 let arrowLeft = document.querySelector('.arrow-leht');
 let arrowRight = document.querySelector('.arrow-right');
 
-arrowRight.addEventListener('click', function () {
-  if (onCart < sliderBlocks.length) {
-    onCart++;
+let arrCart = [];
+for (let i = 0; i < sliderBlocks.length; i++) {
+  let cart = sliderBlocks[i];
+  arrCart.push(cart);
+};
 
-  }
+let i = 0;
+arrowRight.addEventListener('click', function () {
+  
+    cart.classList.remove('visually-hidden');
+    cart.classList.add('slider-show');
+  if (i < arrCart.length - 1) {
+      i++;
+    } else {
+      i = 0;
+    }
+  
 });
+*/
 
 let toggleOnClick = function (itemBtn, onCart) {
   itemBtn.addEventListener('click', function (e) {
