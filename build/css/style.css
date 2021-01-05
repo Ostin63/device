@@ -534,6 +534,9 @@ ul {
   background: #f7e296;
   background: linear-gradient(180deg, #f7e296 118px, #ffffff 118px);
 }
+.slider-block {
+  display: none;
+}
 .slider-item {
   position: relative;
   display: -webkit-box;
@@ -659,6 +662,23 @@ ul {
   left: 3px;
   border-radius: 50%;
   border: 1px solid #000000;
+}
+.arrows {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.arrows li button {
+  width: 30px;
+  height: 45px;
+  font-size: 30px;
+  line-height: 30px;
 }
 .list-products {
   padding-top: 50px;

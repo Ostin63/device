@@ -191,33 +191,30 @@ let sliderBlocks = document.querySelectorAll('.slider-block'); // переклю
 
 for (let i = 0; i < sliderBlocks.length; i++) {
   let sliderBlock = sliderBlocks[0];
-  sliderBlock.classList.remove('visually-hidden');
+  sliderBlock.classList.add('show-block');
 };
-/*
-let arrowLeft = document.querySelector('.arrow-leht');
+
+let arrowLeft = document.querySelector('.arrow-left');
 let arrowRight = document.querySelector('.arrow-right');
 
-let arrCart = [];
-for (let i = 0; i < sliderBlocks.length; i++) {
-  let cart = sliderBlocks[i];
-  arrCart.push(cart);
-};
 
-let i = 0;
-arrowRight.addEventListener('click', function () {
-  
-    cart.classList.remove('visually-hidden');
-    cart.classList.add('slider-show');
-  if (i < arrCart.length - 1) {
-      i++;
-    } else {
-      i = 0;
-    }
-  
-});
-*/
 
 let toggleOnClick = function (itemBtn, onCart) {
+  let currentSlide = 0;
+  function goToSlide(n) {
+    sliderBlocks[currentSlide].classList.remove('show-block');
+    currentSlide = (n + sliderBlocks.length) % sliderBlocks.length;
+    sliderBlocks[currentSlide].classList.add('show-block');
+  }
+  
+  arrowRight.addEventListener('click', function () {
+    goToSlide(currentSlide + 1);
+  });
+
+  arrowLeft.addEventListener('click', function () {
+    goToSlide(currentSlide - 1);
+  });
+
   itemBtn.addEventListener('click', function (e) {
     let target = e.target;
 
@@ -228,11 +225,9 @@ let toggleOnClick = function (itemBtn, onCart) {
     target.classList.add('active');
     for (let i = 0; i < sliderBlocks.length; i++) {
       let cart = sliderBlocks[i];
-      cart.classList.add('visually-hidden');
-      cart.classList.remove('slider-show');
+      cart.classList.remove('show-block', 'slider-show');
     }
-    onCart.classList.remove('visually-hidden');
-    onCart.classList.add('slider-show');
+    onCart.classList.add('show-block', 'slider-show');
   });
 };
 for (let i = 0; i < paginationBtns.length; i++) {

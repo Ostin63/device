@@ -10,6 +10,10 @@
   background: linear-gradient(180deg, #f7e296 118px, #ffffff 118px);
 }
 
+.slider-block {
+  display: none;
+}
+
 .slider-item {
   position: relative;
   display: flex;
@@ -131,6 +135,22 @@
       left: 3px;
       border-radius: 50%;
       border: 1px solid #000000;
+    }
+  }
+}
+
+.arrows {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  display: flex;
+  justify-content: space-between;
+  li {
+    button {
+      width: 30px;
+      height: 45px;
+      font-size: 30px;
+      line-height: 30px;
     }
   }
 }
