@@ -18,7 +18,7 @@ let escapeButtons = document.querySelectorAll('.button-entry .escape');
 let onModalClose = function (evt) {
   evt.preventDefault();
   document.querySelector('.modal-show').classList.remove('modal-show');
-  document.querySelector('.show-block').classList.remove('show-block');
+  modalOverlay.classList.remove('show-block');
   window.removeEventListener('keydown', onEscapePress);
 };
 
@@ -35,6 +35,7 @@ let storage = '';
 
 if (storageName !== null) {
   enterName.textContent = storageName;
+
   for (i = 0; i < entryButtons.length; i++) {
     let entryButton = entryButtons[i];
     entryButton.classList.add('d-none');
@@ -58,13 +59,13 @@ for (let i = 0; i < escapeButtons.length; i++) {
   let escapeButton = escapeButtons[i];
   escapeButton.addEventListener('click', function () {
     localStorage.removeItem('name');
+    location.reload();
   });
 }
 
 if (document.querySelector('.entry-form')) {
   for (let i = 0; i < entryButtons.length; i++) {
     let entryButton = entryButtons[i];
-
     entryButton.addEventListener('click', function (evt) {
       evt.preventDefault();
       modalEntry.classList.add('modal-show');
@@ -110,6 +111,7 @@ if (document.querySelector('.entry-form')) {
     } else {
       if (isStorageSupport) {
         localStorage.setItem('name', entryName.value);
+        location.reload();
       }
     }
   });
@@ -125,6 +127,7 @@ contactsMap.addEventListener('click', function (evt) {
 });
 
 mapClose.addEventListener('click', onModalClose);
+
 
 
 if (document.querySelector('#modal-feedback')) {
@@ -159,8 +162,7 @@ if (document.querySelector('#modal-feedback')) {
 
   close.addEventListener('click', function (evt) {
     evt.preventDefault();
-    modalFeedback.classList.remove('modal-show');
-    modalFeedback.classList.remove('modal-error');
+    modalFeedback.classList.remove('modal-show', 'modal-error');
     modalOverlay.classList.remove('show-block');
   });
   let fields = feedbackForm.querySelectorAll('.field')
@@ -208,7 +210,7 @@ let toggleOnClick = function (itemBtn, onCart) {
     sliderBlocks[currentSlide].classList.add('show-block', 'slider-show');
     paginationBtns[currentSlide].classList.add('active');
   }
-  
+
   arrowRight.addEventListener('click', function () {
     goToSlide(currentSlide + 1);
   });

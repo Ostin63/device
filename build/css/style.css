@@ -1271,7 +1271,9 @@ ul {
   text-transform: uppercase;
 }
 .top-bock {
-  padding: 50px 60px 40px;
+  padding: 50px 200px 40px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 .top-bock h2 {
   margin-bottom: 30px;
@@ -1305,6 +1307,12 @@ ul {
   right: -15px;
   background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='12'%3E%3Cpath fill='%23000000' d='M7.237 5.642L1.729.133a.506.506 0 1 0-.716.716L6.163 6l-5.151 5.15a.507.507 0 0 0 .716.717l5.509-5.509a.504.504 0 0 0 0-.716z'/%3E%3C/svg%3E") 0 0 no-repeat;
 }
+.background-catalog {
+  background: -webkit-gradient(linear, left top, right top, from(#dcdcdc), color-stop(36%, #dcdcdc), color-stop(36%, #ebebeb), to(#ebebeb)), -webkit-gradient(linear, left top, right top, from(#efefef), color-stop(36%, #efefef), color-stop(36%, #fff), to(#fff));
+  background: linear-gradient(to right, #dcdcdc 0%, #dcdcdc 36%, #ebebeb 36%, #ebebeb 100%), linear-gradient(to right, #efefef 0%, #efefef 36%, #fff 36%, #fff 100%);
+  background-size: 100% 70px, 100% 100%;
+  background-repeat: no-repeat;
+}
 .catalog-product {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1321,7 +1329,6 @@ ul {
 .filters .main-filter {
   height: 70px;
   padding: 23px 60px;
-  background: #dbdbdb;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
@@ -1465,6 +1472,11 @@ legend {
   display: block;
   left: -4px;
 }
+.filter-input-checkbox {
+  /*&:focus+label::before {
+    box-shadow: 0 0 0 2px #ffffff, 0 0 0 4px #000000;
+  }*/
+}
 .filter-input-checkbox + label::before {
   content: "";
   position: absolute;
@@ -1479,10 +1491,6 @@ legend {
 }
 .filter-input-checkbox:checked + label::before {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='27' height='23'%3E%3Cpath d='M7.285 7.486l-2.829 2.829 7.783 7.783L26.171 4.166l-2.828-2.829-11.104 11.102zM21 20c0 .542-.458 1-1 1H3c-.542 0-1-.458-1-1V3c0-.542.458-1 1-1h16.908L21.493.415A2.96 2.96 0 0 0 20 0H3C1.35 0 0 1.35 0 3v17c0 1.65 1.35 3 3 3h17c1.65 0 3-1.35 3-3v-9.829l-2 2V20z'/%3E%3C/svg%3E");
-}
-.filter-input-checkbox:focus + label::before {
-  -webkit-box-shadow: 0 0 0 2px #ffffff, 0 0 0 4px #000000;
-          box-shadow: 0 0 0 2px #ffffff, 0 0 0 4px #000000;
 }
 .filter-input-radio + label::before,
 .filter-input-radio + label::after {
@@ -1511,7 +1519,6 @@ legend {
 .catalog-form {
   padding-top: 80px;
   padding-left: 60px;
-  background: #eeeeee;
 }
 .filter-button {
   width: 200px;
