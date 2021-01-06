@@ -235,6 +235,18 @@ legend {
   left: -4px;
 }
 
+.entry-checkbox {
+  position: relative;
+  margin-left: 40px;
+}
+
+.entry-field-checked {
+  &+label::before {
+    margin-top: 7px;
+  }
+}
+
+.entry-field-checked,
 .filter-input-checkbox {
   &+label::before {
     content: "";
