@@ -666,7 +666,7 @@ ul {
 .arrows {
   position: absolute;
   width: 100%;
-  top: 50%;
+  top: 35%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -677,8 +677,23 @@ ul {
 .arrows li button {
   width: 30px;
   height: 45px;
+  padding: 0;
+  padding-bottom: 5px;
+  border: none;
+  border-radius: 10px;
+  background: #f7e296;
   font-size: 30px;
   line-height: 30px;
+  font-family: "gilroyextrabold";
+  outline: none;
+}
+.arrows li button:hover,
+.arrows li button:focus {
+  background: #dbf307;
+  opacity: 0.7;
+}
+.arrows li button:active {
+  background: #f3bc07;
 }
 .list-products {
   padding-top: 50px;

@@ -203,8 +203,10 @@ let toggleOnClick = function (itemBtn, onCart) {
   let currentSlide = 0;
   function goToSlide(n) {
     sliderBlocks[currentSlide].classList.remove('show-block', 'slider-show');
+    paginationBtns[currentSlide].classList.remove('active');
     currentSlide = (n + sliderBlocks.length) % sliderBlocks.length;
     sliderBlocks[currentSlide].classList.add('show-block', 'slider-show');
+    paginationBtns[currentSlide].classList.add('active');
   }
   
   arrowRight.addEventListener('click', function () {
