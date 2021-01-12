@@ -223,8 +223,6 @@ let toggleOnClick = function (itemBtn, onCart) {
   });
 
   itemBtn.addEventListener('click', function (e) {
-    document.querySelector('.show-block').classList.remove('.show-block');
-    document.querySelector('.active').classList.remove('.active');
     let target = e.target;
 
     for (let i = 0; i < paginationBtns.length; i++) {
