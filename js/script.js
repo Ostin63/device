@@ -31,8 +31,6 @@ let onEscapePress = function (evt) {
 let isStorageSupport = true;
 let storage = '';
 
-
-
 if (storageName !== null) {
   enterName.textContent = storageName;
 
@@ -185,25 +183,30 @@ if (document.querySelector('#modal-feedback')) {
 // Top slider
 
 let paginationBtns = document.querySelectorAll('.item span'); // кнопки
-for (let i = 0; i < paginationBtns.length; i++) {
-  let btnItem = paginationBtns[0];
-  btnItem.classList.add('active');
-}
+
 let sliderBlocks = document.querySelectorAll('.slider-block'); // переключаемые блоки
 
-for (let i = 0; i < sliderBlocks.length; i++) {
-  let sliderBlock = sliderBlocks[0];
-  sliderBlock.classList.add('show-block');
-};
 
 let arrowLeft = document.querySelector('.arrow-left');
 let arrowRight = document.querySelector('.arrow-right');
 
-
-
 let toggleOnClick = function (itemBtn, onCart) {
+
   let currentSlide = 0;
+  paginationBtns[currentSlide].classList.add('active');
+  sliderBlocks[currentSlide].classList.add('show-block');
+
   function goToSlide(n) {
+
+    for (let i = 0; i < paginationBtns.length; i++) {
+      let btnItem = paginationBtns[i];
+      btnItem.classList.remove('active');
+    }
+    for (let i = 0; i < sliderBlocks.length; i++) {
+      let sliderBlock = sliderBlocks[i];
+      sliderBlock.classList.remove('show-block');
+    };
+    
     sliderBlocks[currentSlide].classList.remove('show-block', 'slider-show');
     paginationBtns[currentSlide].classList.remove('active');
     currentSlide = (n + sliderBlocks.length) % sliderBlocks.length;
@@ -220,6 +223,8 @@ let toggleOnClick = function (itemBtn, onCart) {
   });
 
   itemBtn.addEventListener('click', function (e) {
+    document.querySelector('.show-block').classList.remove('.show-block');
+    document.querySelector('.active').classList.remove('.active');
     let target = e.target;
 
     for (let i = 0; i < paginationBtns.length; i++) {
