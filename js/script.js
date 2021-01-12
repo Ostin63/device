@@ -204,7 +204,7 @@ let toggleOnClick = function (itemBtn, onCart) {
     }
     for (let i = 0; i < sliderBlocks.length; i++) {
       let sliderBlock = sliderBlocks[i];
-      sliderBlock.classList.remove('show-block');
+      sliderBlock.classList.remove('show-block', 'slider-show');
     };
     
     sliderBlocks[currentSlide].classList.remove('show-block', 'slider-show');
