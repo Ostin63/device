@@ -14,13 +14,13 @@
   font-family: "gilroylight";
   font-style: normal;
   font-weight: 300;
-  src: local("opensans"), url("../fonts/gilroylight.woff2") format("woff2"), url("../fonts/gilroylight.woff") format("woff");
+  src: local("gilroylight"), url("../fonts/gilroylight.woff2") format("woff2"), url("../fonts/gilroylight.woff") format("woff");
 }
 @font-face {
   font-family: "gilroyextrabold";
   font-style: normal;
   font-weight: 900;
-  src: local("opensans"), url("../fonts/gilroyextrabold.woff2") format("woff2"), url("../fonts/gilroyextrabold.woff") format("woff");
+  src: local("gilroyextrabold"), url("../fonts/gilroyextrabold.woff2") format("woff2"), url("../fonts/gilroyextrabold.woff") format("woff");
 }
 .container {
   width: 1440px;
@@ -179,6 +179,11 @@ h3 {
   display: block;
   background: #f7e296;
   z-index: 1;
+}
+.button .bg:hover {
+  background: rgba(255, 255, 255, 0);
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
 }
 .button:hover {
   background: #f7e296;
