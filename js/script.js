@@ -244,10 +244,7 @@ for (let i = 0; i < paginationBtns.length; i++) {
 // Services slider
 
 let servicesВuttons = document.querySelectorAll('li.services-button');
-//for (let i = 0; i < servicesВuttons.length; i++) {
- // let btnItem = servicesВuttons[0];
-  //btnItem.classList.add('act');
-//}
+
 servicesВuttons[0].classList.add('act');
 let servicesBlocks = document.querySelectorAll('.services-slider--item');
 
