@@ -1,20 +1,26 @@
+.close {
+  width: 50px;
+  height: 50px;
+  border: 7.5px solid var(--special-yellow-dark);
+  border-radius: 50%;
+  background-color: var(--special-yellow-dark);
+  opacity: 0.5;
+  background-image: var(--button-close);
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  outline: none;
+}
+
+.close:hover,
+.close:focus {
+  opacity: 1;
+}
+
+.close:active {
+  opacity: 0.3;
+}
+
 .modal-map {
-  display: none;
-  box-shadow: 0 20px 40px 0 rgba(0, 0, 0, .75);
-  position: fixed;
   width: 994px;
   height: 593px;
-  top: calc(50% - 593px/2);
-  left: calc(50% - 994px/2);
-  z-index: 20;
-}
-
-.map-close {
-  top: 22px;
-  right: 22px;
-}
-
-.slider-show-map {
-  animation-name: fadeIn;
-  animation-duration: 1.5s;
 }

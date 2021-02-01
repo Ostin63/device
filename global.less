@@ -1,183 +1,102 @@
 .container {
-  width: 1440px;
-  padding: 0 140px;
+  width: 1160px;
   margin: 0 auto;
+  padding: 0 60px;
   box-sizing: border-box;
 }
 
 .visually-hidden {
   position: absolute;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  height: 1px;
   width: 1px;
+  height: 1px;
   margin: -1px;
-  padding: 0;
   border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }
 
-
-h1,
-h2,
-h3 {
-  margin-top: 0;
-  font-family: "gilroyextrabold", "arial", sans-serif;
+body {
+  min-width: 1160px;
+  margin: 0 auto;
+  padding: 0;
+  font-family: "Open Sans", "Arial", sans-serif;
+  font-size: 15px;
+  line-height: 20px;
+  color: var(--basic-black);
+  background-color: var(--basic-white);
 }
 
-@keyframes bounce {
-  0% {
-    transform: translateY(-2000px);
-  }
-
-  70% {
-    transform: translateY(30px);
-  }
-
-  90% {
-    transform: translateY(-10px);
-  }
-
-  100% {
-    transform: translateY(0);
-  }
+.style {
+  text-decoration: none;
+  display: block;
+  color: inherit;
 }
 
-@keyframes shake {
-
-  0%,
-  100% {
-    transform: translateX(0);
-  }
-
-  10%,
-  30%,
-  50%,
-  70%,
-  90% {
-    transform: translateX(-10px);
-  }
-
-  20%,
-  40%,
-  60%,
-  80% {
-    transform: translateX(10px);
-  }
+.picture {
+  max-width: 100%;
+  height: auto;
 }
 
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
+.link:hover,
+.link:focus {
+  opacity: 0.6;
 }
 
-.slider-show {
-  animation: fadeIn .5s;
+.link:active {
+  opacity: 0.3;
 }
 
-.button {
-  height: 40px;
-  position: relative;
-  padding-left: 0;
-  padding-right: 0;
-  text-transform: uppercase;
-  font-size: 18px;
-  line-height: 24px;
-  font-family: "gilroyextrabold", "arial", sans-serif;
-  border: none;
-  background: none;
-  outline: none;
-  cursor: pointer;
-  transition: .5s;
-  z-index: 10;
-
-  .text {
-    position: absolute;
-    width: 100%;
-    left: 0;
-    top: 8px;
-    z-index: 2;
-  }
-
-  .bg {
-    position: absolute;
-    content: "";
-    width: 100%;
-    height: 8px;
-    top: 16px;
-    left: 0;
-    display: block;
-    background: #f7e296;
-    z-index: 1;
-
-    &:hover {
-      background: rgba(255, 255, 255, 0);
-      transition: .5s;
-    }
-  }
-
-  &:hover {
-    background: #f7e296;
-  }
-
-  &:active {
-    color: #a88a20;
-
-  }
-}
-
-ul {
+.list {
   list-style: none;
   padding-left: 0;
   margin: 0;
 }
 
+/*Button*/
 
-.close {
-  position: absolute;
-  width: 55px;
-  height: 55px;
+.button {
+  position: relative;
+  height: 40px;
+  display: flex;
   padding: 0;
-  border-radius: 50%;
+  font-size: 18px;
+  line-height: 22px;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-family: "Gilroy", "Arial", sans-serif;
   border: none;
-  background: #ebd27f;
+  background: none;
   outline: none;
+  box-sizing: border-box;
+  cursor: pointer;
+}
 
-  &::after {
-    position: relative;
-    content: "";
-    display: block;
-    width: 28px;
-    height: 2px;
-    top: -2px;
-    margin: 0 auto;
-    background: #ffffff;
-    transform: rotate(45deg);
-  }
+.button::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 8px;
+  top: 16px;
+  background: var(--special-yellow-dark);
+  transition: .3s;
+  z-index: 1;
+}
 
-  &::before {
-    position: relative;
-    content: "";
-    display: block;
-    width: 28px;
-    height: 2px;
-    left: 1px;
+.button:hover {
+  background: var(--special-yellow-dark);
+}
 
-    margin: 0 auto;
-    background: #ffffff;
-    transform: rotate(-45deg);
-  }
+.button:active {
+  color: rgba(0, 0, 0, 0.2);
+}
 
-  &:hover,
-  &:focus {
-    background: #f0c52e;
-  }
-
-  &:active {
-    background: #faedc0;
-  }
+.button__text {
+  margin: 0 auto;
+  align-self: center;
+  box-sizing: border-box;
+  z-index: 10;
 }

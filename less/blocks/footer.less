@@ -1,109 +1,61 @@
-.footer {
-  padding-top: 65px;
-  padding-bottom: 79px;
-  color: #ffffff;
-  background: #464646;
-  font-family: "gilroyextrabold", "arial", sans-serif;
+.page-footer {
+  background: var(--basic-dark);
+  color: var(--basic-white);
 }
 
-.top-section,
-.middle-section,
-.bottom-section {
-  display: flex;
-  justify-content: space-between;
+.footer-top__logo {
+  color: var(--special-yellow-dark);
 }
 
-.footer-logo {
+.footer-top__logo svg {
+  width: 163px;
+  height: 35px;
+}
+
+.icon-user-footer {
   display: block;
-  margin: 0;
-  font-size: 48px;
-  color: #ffc600;
-  text-decoration: none;
-
-  &:hover,
-  &:focus {
-    opacity: 0.5;
-  }
-
-  &:active {
-    opacity: 0.3;
-  }
+  width: 13px;
+  height: 14px;
+  background: var(--icon-user-footer) 0 0 no-repeat;
 }
 
-.footer-rigth-block {
-  .btn-block {
-    a {
-      color: #ffffff;
-    }
-
-    &:hover,
-    &:focus {
-      opacity: 0.5;
-    }
-
-    &:active {
-      opacity: 0.3;
-    }
-  }
+.icon-chart-footer {
+  display: block;
+  width: 14px;
+  height: 14px;
+  background: var(--icon-chart-footer) 0 0 no-repeat;
 }
 
-.footer-nav {
-  li {
-    align-self: center;
-  }
-
-  a {
-    color: #ffffff;
-  }
+.icon-basket-footer {
+  display: block;
+  width: 10px;
+  height: 10px;
+  background: var(--icon-basket-footer) 0 0 no-repeat;
 }
 
-.middle-section {
-  margin-top: 40px;
-
-  p {
-    margin: 0;
-    font-size: 15px;
-    line-height: 30px;
-    font-family: "opensanslight", "Arial", sans-serif;
-  }
-
-  .phone {
-    a {
-      text-decoration: none;
-      color: #ffffff;
-      font-size: 15px;
-      line-height: 30px;
-      font-family: "opensanslight", "Arial", sans-serif;
-    }
-  }
+.footer-middle__nav {
+  font-size: 18px;
+  line-height: 22px;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  font-family: "Gilroy", "Arial", sans-serif;
+  text-transform: uppercase;
 }
 
-.bottom-section {
-  margin-top: 70px;
+.social-item__button {
+  width: 32px;
+  height: 32px;
+  display: block;
 }
 
-.footer-line {
-  width: 80px;
-  height: 7px;
-  align-self: center;
-  background: #ffc600;
+.social__item:first-child .social-item__button {
+  background: var(--social-facebook) 0 0 no-repeat;
 }
 
-.footer-social {
-  width: 150px;
-  display: flex;
-  justify-content: space-between;
+.social__item:nth-child(2) .social-item__button {
+  background: var(--social-instagram) 0 0 no-repeat;
+}
 
-  .social-button {
-    opacity: 0.5;
-
-    &:hover,
-    &:focus {
-      opacity: 1;
-    }
-
-    &:active {
-      opacity: 0.3;
-    }
-  }
+.social__item:last-child .social-item__button {
+  background: var(--social-twitter) 0 0 no-repeat;
 }

@@ -1,31 +1,10 @@
-.page-brands {
-  padding-top: 40px;
-  padding-bottom: 40px;
-  display: flex;
-  justify-content: space-between;
+.brands-item__imges {
+  filter: grayscale(100%);
+  opacity: 0.2;
 }
 
-.block-imges {
-  width: 260px;
-  height: 100px;
-
-  img {
-    &:last-child {
-      display: none;
-    }
-  }
-
-  &:hover {
-    img {
-      &:last-child {
-        display: block;
-      }
-    }
-
-    img {
-      &:first-child {
-        display: none;
-      }
-    }
-  }
+.brands-item__imges:hover,
+.brands-item__imges:focus {
+  filter: grayscale(0);
+  opacity: 1;
 }

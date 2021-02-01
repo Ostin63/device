@@ -1,104 +1,39 @@
-.services-page {
-  background: rgb(255, 255, 255);
-  background: linear-gradient(180deg, #ffffff 140px, #e5e5e5 140px);
+.page-services {
+  background: linear-gradient(180deg, var(--basic-white) 115px, var(--basic-grey-light) 115px);
 }
 
-.services {
-  padding-top: 40px;
-  padding-bottom: 70px;
-  display: flex;
-  justify-content: space-between;
+.service span {
+  display: block;
+  width: 180px;
+  height: 202px;
 }
 
-.services-buttons {
-  width: 280px;
-  height: 180px;
-  margin-top: 81px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-
-  .btn {
-    width: 160px;
-    height: 40px;
-
-    .bg {
-      background: #f0c52e;
-    }
-
-    &:hover,
-    &:focus {
-      background: #f0c52e;
-    }
-  }
-
-  .services-button {
-    width: 280px;
-    height: 40px;
-  }
+.service__img-delivery {
+  background: var(--service-delivery)0 0 no-repeat;
 }
 
-.act {
-  background: #000000;
-  transition: .5s;
-
-  .button {
-    .bg {
-      background: none;
-    }
-
-    .text {
-      color: #d6c372;
-    }
-
-    &:hover,
-    &:focus {
-      background: #000000;
-    }
-  }
+.service__img-warranty {
+  background: var(--service-warranty) 0 0 no-repeat;
 }
 
-
-.plank {
-  width: 7px;
-  height: 319px;
-  background: #000;
+.service__img-credit {
+  background: var(--service-credit) 0 0 no-repeat;
 }
 
-.services-slider {
-  width: 880px;
-  margin-top: 70px;
-  padding-left: 120px;
-  padding-right: 60px;
-
-  .page-item {
-    display: flex;
-    justify-content: space-between;
-  }
+.service__info h3 {
+  font-weight: 800;
+  font-size: 47px;
+  line-height: 58px;
+  letter-spacing: 0.2em;
+  font-family: "Gilroy", "Arial", sans-serif;
 }
 
-.service-info {
-  width: 433px;
-
-  h3 {
-    font-size: 47px;
-    line-height: 48px;
-  }
-
-  p {
-    font-size: 15px;
-    line-height: 30px;
-    font-family: "opensanslight", "arial", sans-serif;
-  }
+.service__info p {
+  font-size: 15px;
+  line-height: 30px;
+  letter-spacing: 0.1em;
 }
 
-.service-img {
-  width: 171px;
-  height: 194px;
-  display: flex;
-  justify-content: center;
-
-  img {
-    align-self: center;
-  }
+.services-item__button {
+  width: 160px;
 }
