@@ -1,0 +1,44 @@
+.list-products {
+  padding-top: 50px;
+  padding-bottom: 40px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.item-product {
+  a {
+    width: 160px;
+    height: 160px;
+    padding-top: 40px;
+    display: flex;
+    justify-content: center;
+    background: #f7e296;
+    box-sizing: border-box;
+  }
+
+  p {
+    width: 160px;
+    margin-top: 37px;
+    font-size: 18px;
+    line-height: 24px;
+    font-family: "gilroyextrabold", "arial", sans-serif;
+  }
+
+  &:hover,
+  &:focus {
+    a {
+      background: #f0c52e;
+    }
+  }
+
+  &:active {
+    a {
+      img {
+        opacity: .5;
+      }
+    }
+    p {
+      color: #b2b2b2;
+    }
+  }
+}

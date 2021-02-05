@@ -1,0 +1,174 @@
+.slider-page {
+  position: relative;
+  padding-bottom: 50px;
+}
+
+.top-slider {
+  position: relative;
+  margin: 0;
+  background: #f7e296;
+  background: linear-gradient(180deg, #f7e296 118px, #ffffff 118px);
+}
+
+.slider-block {
+  display: none;
+}
+
+.slider-item {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+
+.block-img {
+  width: 526px;
+  height: 486px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  img {
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+.block-info {
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+
+  p:first-child {
+    position: absolute;
+    margin: 0;
+    color: #ffffff;
+    right: 0;
+    top: -20px;
+    font-size: 179px;
+    font-family: "gilroyextrabold", "arial", sans-serif;
+
+    span {
+      position: absolute;
+      width: 100px;
+      height: 7px;
+      top: 70px;
+      right: 400px;
+      display: block;
+      background: #ffffff;
+    }
+  }
+
+  .btn {
+    width: 220px;
+    height: 40px;
+    margin-top: 15px;
+  }
+
+
+  h3 {
+    width: 400px;
+    margin-top: 86px;
+    font-size: 47px;
+    line-height: 56px;
+    font-family: "gilroyextrabold", "arial", sans-serif;
+    z-index: 5;
+  }
+
+  p:nth-child(3) {
+    width: 480px;
+    margin-top: 35px;
+    margin-bottom: 35px;
+    font-size: 15px;
+    line-height: 30px;
+    font-family: "opensanslight", "arial", sans-serif;
+  }
+}
+
+.table-options {
+  width: 430px;
+  display: block;
+  margin-top: 60px;
+
+  th {
+    width: 160px;
+    font-size: 36px;
+    line-height: 48px;
+    font-family: "gilroylight", "arial", sans-serif;
+  }
+
+  td {
+    font-size: 13px;
+    line-height: 20px;
+    font-family: "opensanslight", "arial", sans-serif;
+  }
+}
+
+
+.pagination-slider {
+  position: absolute;
+  width: 80px;
+  top: 400px;
+  right: 40px;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+
+  .item {
+    span {
+      position: absolute;
+      content: "";
+      display: block;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      border: 1px solid #000000;
+      z-index: 1;
+    }
+
+    .active::before {
+      position: absolute;
+      content: "";
+      display: block;
+      width: 4px;
+      height: 4px;
+      top: 3px;
+      left: 3px;
+      border-radius: 50%;
+      border: 1px solid #000000;
+    }
+  }
+}
+
+.arrows {
+  position: absolute;
+  width: 100%;
+  top: 35%;
+  display: flex;
+  justify-content: space-between;
+
+  li {
+    button {
+      width: 30px;
+      height: 45px;
+      padding: 0;
+      padding-bottom: 5px;
+      border: none;
+      border-radius: 10px;
+      background: #f7e296;
+      font-size: 30px;
+      line-height: 30px;
+      font-family: "gilroyextrabold";
+      outline: none;
+
+      &:hover,
+      &:focus {
+        background: #dbf307;
+        opacity: 0.7;
+      }
+
+      &:active {
+        background: #f3bc07;
+      }
+    }
+  }
+}
