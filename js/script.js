@@ -230,6 +230,7 @@ let toggleOnClick = function (itemBtn, onCart) {
       item.classList.remove('active');
     }
     target.classList.add('active');
+    
     for (let i = 0; i < sliderBlocks.length; i++) {
       let cart = sliderBlocks[i];
       cart.classList.remove('show-block', 'slider-show');

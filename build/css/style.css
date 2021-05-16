@@ -1129,7 +1129,7 @@ ul {
 .feedback-item-message {
   width: 100%;
 }
-.feedback-item-message textarea {
+.feedback-item-message .textarea {
   height: 150px;
   padding: 20px;
   -webkit-box-sizing: border-box;
